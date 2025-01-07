@@ -1,36 +1,40 @@
-/*--------------------------------------------------------------
-  Grid Layout
---------------------------------------------------------------*/
+/* --------------------------------------------------------------
+   Grid Layout and Components
+-------------------------------------------------------------- */
+
+/* General Grid Layout */
 .grid-layout,
 .updates-grid,
-.blog-grid {
+.blog-grid,
+.grid-container,
+.services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Minimum size unified to 250px for flexibility */
   gap: var(--spacing-md);
 }
 
+/* Grid Items */
+.grid-item,
 .post-item,
 .update-item,
-.blog-post {
+.blog-post,
+.services .service-item,
+.latest-posts .post-item {
   background-color: var(--color-dark-bg-alt);
   border: 1px solid var(--color-border);
-  border-radius: 8px;
+  border-radius: 8px; /* Unified border-radius */
   padding: var(--spacing-sm);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease-in-out;
 }
 
+/* Hover Effects */
+.grid-item:hover,
 .post-item:hover,
 .update-item:hover,
-.blog-post:hover {
+.blog-post:hover,
+.services .service-item:hover,
+.latest-posts .post-item:hover {
   transform: translateY(-5px);
   box-shadow: var(--box-shadow-hover);
-}
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--spacing-md);
-}
-
-.grid-item {
-  /* Additional card styling can go here */
+  background-color: var(--color-dark-green); /* Unified hover background */
 }
