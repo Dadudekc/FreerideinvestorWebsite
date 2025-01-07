@@ -1,0 +1,36 @@
+/*--------------------------------------------------------------
+  Grid Layout
+--------------------------------------------------------------*/
+.grid-layout,
+.updates-grid,
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.post-item,
+.update-item,
+.blog-post {
+  background-color: var(--color-dark-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: var(--spacing-sm);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.post-item:hover,
+.update-item:hover,
+.blog-post:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-hover);
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.grid-item {
+  /* Additional card styling can go here */
+}

@@ -1,0 +1,43 @@
+/*--------------------------------------------------------------
+  Global Styles
+--------------------------------------------------------------*/
+body {
+  background-color: var(--color-dark-bg);
+  color: var(--color-text-base);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-nav-hover-bg);
+  text-decoration: underline;
+}
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  background-color: var(--color-dark-bg);
+  color: var(--color-text-base);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+  font-weight: bold;
+  line-height: 1.2;
+  color: var(--color-text-base);
+}
+
+p {
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-base);
+}

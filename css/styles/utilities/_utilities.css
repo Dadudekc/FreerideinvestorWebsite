@@ -1,0 +1,50 @@
+/*--------------------------------------------------------------
+  Utilities
+--------------------------------------------------------------*/
+
+/* Highlight Box */
+.utility--highlight-box {
+  background-color: var(--color-light-dark-green);
+  color: var(--color-black);
+  padding: var(--spacing-md);
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: var(--box-shadow-light);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Notes */
+.utility--notes {
+  font-style: italic;
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-top: var(--spacing-md);
+}
+
+/* Dark Theme Background Utility */
+.dark-theme-bg {
+  /* If needed for dark mode backgrounds */
+  /* Customize or remove as needed */
+  /* Example: background: none; */
+}
+
+/* Post Content Images */
+.post-content img,
+.post-content figure {
+  margin: var(--spacing-sm) 0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* Service Icon */
+.service-icon {
+  text-align: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.service-icon img {
+  width: 60px;
+  height: 60px;
+  filter: brightness(0) invert(1);
+}

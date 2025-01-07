@@ -1,0 +1,25 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.grid-item {
+  background-color: var(--color-dark-grey);
+  padding: var(--spacing-sm);
+  border-radius: 8px;
+  box-shadow: var(--box-shadow-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item:hover,
+.grid-item:focus-within {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-hover);
+}
+/* Additional layout grid classes */
+.section-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+}

@@ -1,0 +1,94 @@
+/* Collapsible Elements */
+.collapsible {
+  background-color: var(--color-light-dark-green);
+  color: var(--color-black);
+  cursor: pointer;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  margin-top: var(--spacing-sm);
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.collapsible:hover,
+.collapsible:focus {
+  background-color: var(--color-nav-hover-bg);
+  color: var(--color-text-base);
+}
+
+.collapsible:after {
+  content: '\002B'; /* Plus symbol */
+  float: right;
+  transition: transform 0.3s ease;
+}
+
+.collapsible.active:after {
+  transform: rotate(45deg); /* Turns plus into an 'x' */
+}
+
+/* Collapsible Content */
+.content {
+  padding: var(--spacing-sm);
+  display: none;
+  overflow: hidden;
+  background-color: var(--color-dark-grey);
+  border-radius: 5px;
+  margin-top: var(--spacing-xs);
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.active + .content {
+  display: block;
+  max-height: 500px; /* Increased max-height for more content */
+  opacity: 1;
+}
+.collapsible {
+  background-color: var(--color-light-dark-green);
+  color: var(--color-black);
+  cursor: pointer;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  margin-top: var(--spacing-sm);
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.collapsible:hover,
+.collapsible:focus {
+  background-color: var(--color-nav-hover-bg);
+  color: var(--color-text-base);
+}
+
+.collapsible:after {
+  content: '\002B'; /* Plus symbol */
+  float: right;
+  transition: transform 0.3s ease;
+}
+
+.collapsible.active:after {
+  transform: rotate(45deg);
+}
+
+.content {
+  padding: var(--spacing-sm);
+  display: none;
+  overflow: hidden;
+  background-color: var(--color-dark-grey);
+  border-radius: 5px;
+  margin-top: var(--spacing-xs);
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.active + .content {
+  display: block;
+  max-height: 500px;
+  opacity: 1;
+}

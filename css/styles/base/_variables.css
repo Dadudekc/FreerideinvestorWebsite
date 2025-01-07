@@ -1,0 +1,33 @@
+:root {
+  /* Colors */
+  --color-black: #000000;
+  --color-dark-grey: #1E1E1E;
+  --color-dark-green: #116611; /* Updated to #116611 */
+  --color-light-dark-green: #228822;
+  --color-nav-hover-bg: #228822;
+  --color-dark-bg: #121212;
+  --color-dark-bg-alt: #1A1A1A;
+  --color-text-base: #EDEDED;
+  --color-text-muted: #BBBBBB;
+  --color-accent: var(--color-light-dark-green);
+  --color-border: #333333;
+  --color-highlight-bg: #f0f0f0; /* for .highlight-box */
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+
+  /* Typography */
+  --font-family-base: 'Roboto', sans-serif;
+  --font-size-base: 16px;
+  --line-height-base: 1.5;
+
+  /* Shadows */
+  --box-shadow-light: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  --box-shadow-hover: 0px 4px 10px rgba(0, 0, 0, 0.4);
+
+  /* Optional custom property if you use a border-radius variable */
+  --border-radius: 5px;
+}
