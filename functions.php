@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
 }
 
 /* ==================================================
- *  1. THEME SETUP & BASIC SUPPORT
+ * 1. THEME SETUP & BASIC SUPPORT
  * ================================================== */
 
 function theme_setup() {
@@ -39,9 +39,8 @@ function theme_setup() {
 }
 add_action('after_setup_theme', __NAMESPACE__ . '\\theme_setup');
 
-
 /* ==================================================
- *  2. ASSETS & ENQUEUING
+ * 2. ASSETS & ENQUEUING
  * ================================================== */
 
 function enqueue_assets() {
@@ -65,14 +64,12 @@ function enqueue_assets() {
         'nonce' => wp_create_nonce('wp_rest'),
     ]);
 
-    // Enqueue additional scripts for widgets
-    // Example: TradingView requires their own script, but since we are using embed codes, we might not need to enqueue them here.
+    // Enqueue additional scripts for widgets if necessary
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_assets');
 
-
 /* ==================================================
- *  3. DISCORD CUSTOMIZER SETTINGS
+ * 3. DISCORD CUSTOMIZER SETTINGS
  * ================================================== */
 
 function fri_customize_register($wp_customize) {
@@ -111,9 +108,8 @@ function fri_customize_register($wp_customize) {
 }
 add_action('customize_register', __NAMESPACE__ . '\\fri_customize_register');
 
-
 /* ==================================================
- *  4. REST API: TRADE JOURNAL ENDPOINT
+ * 4. REST API: TRADE JOURNAL ENDPOINT
  * ================================================== */
 add_action('rest_api_init', function () {
     register_rest_route('simplifiedtrading/v1', '/trade-journal', [
@@ -238,9 +234,8 @@ function process_trade_journal(\WP_REST_Request $request) {
     ], 200);
 }
 
-
 /* ==================================================
- *  5. CUSTOM DB TABLE CREATION
+ * 5. CUSTOM DB TABLE CREATION
  * ================================================== */
 
 function ensure_table_exists($table_name) {
@@ -264,9 +259,8 @@ function ensure_table_exists($table_name) {
     }
 }
 
-
 /* ==================================================
- *  6. ADMIN PAGE FOR TRADES
+ * 6. ADMIN PAGE FOR TRADES
  * ================================================== */
 
 function add_trade_journal_admin_menu() {
@@ -333,9 +327,8 @@ function render_trade_journal_admin() {
     echo '</div>'; // .wrap
 }
 
-
 /* ==================================================
- *  7. SHORTCODE FOR TRADE JOURNAL FORM
+ * 7. SHORTCODE FOR TRADE JOURNAL FORM
  * ================================================== */
 
 function trade_journal_form_shortcode() {
@@ -429,9 +422,8 @@ function trade_journal_form_shortcode() {
 }
 add_shortcode('trade_journal_form', __NAMESPACE__ . '\\trade_journal_form_shortcode');
 
-
 /* ==================================================
- *  8. SHORTCODE FOR EBOOK DOWNLOAD FORM
+ * 8. SHORTCODE FOR EBOOK DOWNLOAD FORM
  * ================================================== */
 
 /**
@@ -529,9 +521,8 @@ function handle_ebook_download_form() {
 add_action('admin_post_nopriv_ebook_download_form', __NAMESPACE__ . '\\handle_ebook_download_form');
 add_action('admin_post_ebook_download_form', __NAMESPACE__ . '\\handle_ebook_download_form');
 
-
 /* ==================================================
- *  9. MAILCHIMP SUBSCRIPTION FORM HANDLING
+ * 9. MAILCHIMP SUBSCRIPTION FORM HANDLING
  * ================================================== */
 
 /**
@@ -627,31 +618,156 @@ function handle_mailchimp_subscription_form() {
 add_action('admin_post_nopriv_mailchimp_subscription_form', __NAMESPACE__ . '\\handle_mailchimp_subscription_form');
 add_action('admin_post_mailchimp_subscription_form', __NAMESPACE__ . '\\handle_mailchimp_subscription_form');
 
-
 /* ==================================================
- * 10. EMAIL FUNCTIONALITY ENHANCEMENTS
+ * 10. GITHUB THEME AUTO-UPDATER
  * ================================================== */
 
-/**
- * Ensure Mailchimp API credentials are stored securely
- * 
- * It's highly recommended to store sensitive API keys in your wp-config.php or use environment variables.
- * 
- * **Steps to Securely Store API Credentials:**
- * 
- * 1. **Edit `wp-config.php`:**
- *    Add the following lines to your `wp-config.php` file, replacing the placeholders with your actual credentials:
- *    ```php
- *    define('MAILCHIMP_API_KEY', 'your-mailchimp-api-key-here');
- *    define('MAILCHIMP_LIST_ID', 'your-mailchimp-list-id-here');
- *    ```
- * 
- * 2. **Update `functions.php` to Use These Constants:**
- *    The above code already retrieves these constants using the `defined` function. Ensure that the constants are correctly defined in `wp-config.php`.
- * 
- * **Security Note:** Never expose your API keys in publicly accessible files or repositories. Using `wp-config.php` ensures that they remain secure.
- */
+add_action('init', __NAMESPACE__ . '\\check_github_updates');
 
+/**
+ * Check GitHub for updates and download the latest version if available.
+ */
+function check_github_updates() {
+    // Only allow updates from an admin action for safety
+    if (!is_admin() || !current_user_can('manage_options')) {
+        return;
+    }
+
+    $github_repo = 'Dadudekc/FreerideinvestorWebsite';
+    $github_api_url = "https://api.github.com/repos/{$github_repo}/releases/latest";
+
+    $options = [
+        'headers' => [
+            'User-Agent' => 'SimplifiedTradingTheme',
+            'Authorization' => 'token ' . (defined('GITHUB_PERSONAL_ACCESS_TOKEN') ? GITHUB_PERSONAL_ACCESS_TOKEN : ''),
+        ]
+    ];
+
+    $response = wp_remote_get($github_api_url, $options);
+    if (is_wp_error($response)) {
+        error_log('GitHub API Error: ' . $response->get_error_message());
+        return;
+    }
+
+    $release = json_decode(wp_remote_retrieve_body($response), true);
+    if (!isset($release['tag_name'])) {
+        error_log('Invalid GitHub release response.');
+        return;
+    }
+
+    $latest_version = ltrim($release['tag_name'], 'v'); // Remove 'v' prefix if present
+    $current_version = wp_get_theme()->get('Version');
+
+    if (version_compare($latest_version, $current_version, '>')) {
+        download_and_update_theme($release['zipball_url']);
+    }
+}
+
+/**
+ * Download and replace the current theme with the latest from GitHub.
+ *
+ * @param string $zip_url URL to the GitHub ZIP archive.
+ */
+function download_and_update_theme($zip_url) {
+    $upload_dir = wp_get_upload_dir();
+    $zip_file = $upload_dir['basedir'] . '/freerideinvestor-latest.zip';
+
+    // Download the ZIP
+    $response = wp_remote_get($zip_url, ['timeout' => 300]);
+    if (is_wp_error($response)) {
+        error_log('Error downloading theme: ' . $response->get_error_message());
+        return;
+    }
+
+    file_put_contents($zip_file, wp_remote_retrieve_body($response));
+
+    // Extract ZIP
+    $theme_dir = get_theme_root() . '/' . get_template();
+    $zip = new \ZipArchive();
+    if ($zip->open($zip_file) === true) {
+        // Extract to a temporary directory first to prevent overwriting active theme files
+        $temp_dir = $upload_dir['basedir'] . '/freerideinvestor-temp';
+        if (!file_exists($temp_dir)) {
+            mkdir($temp_dir, 0755, true);
+        }
+        $zip->extractTo($temp_dir);
+        $zip->close();
+
+        // Copy files from temp_dir to theme_dir
+        copy_directory($temp_dir, $theme_dir);
+
+        // Remove temporary directory and ZIP file
+        delete_directory($temp_dir);
+        unlink($zip_file);
+
+        // Update version in style.css
+        update_theme_version();
+
+        error_log('Theme successfully updated to the latest version.');
+    } else {
+        error_log('Error extracting theme ZIP.');
+    }
+}
+
+/**
+ * Recursively copy files from source to destination.
+ *
+ * @param string $src Source directory.
+ * @param string $dst Destination directory.
+ */
+function copy_directory($src, $dst) {
+    $dir = opendir($src);
+    @mkdir($dst);
+    while(false !== ( $file = readdir($dir)) ) {
+        if (($file != '.') && ($file != '..')) {
+            if (is_dir($src . '/' . $file)) {
+                copy_directory($src . '/' . $file, $dst . '/' . $file);
+            }
+            else {
+                copy($src . '/' . $file, $dst . '/' . $file);
+            }
+        }
+    }
+    closedir($dir);
+}
+
+/**
+ * Recursively delete a directory.
+ *
+ * @param string $dir Directory path.
+ */
+function delete_directory($dir) {
+    if (!file_exists($dir)) return;
+
+    if (!is_dir($dir)) {
+        unlink($dir);
+        return;
+    }
+
+    foreach (scandir($dir) as $item) {
+        if ($item == '.' || $item == '..') continue;
+        if (is_dir($dir . '/' . $item)) {
+            delete_directory($dir . '/' . $item);
+        } else {
+            unlink($dir . '/' . $item);
+        }
+    }
+    rmdir($dir);
+}
+
+/**
+ * Update the theme version after a successful update.
+ */
+function update_theme_version() {
+    $style_file = get_template_directory() . '/style.css';
+    $contents = file_get_contents($style_file);
+
+    // Replace Version line (Assumes it's in "Version: x.x.x" format)
+    $new_version = wp_get_theme()->get('Version');
+    $contents = preg_replace('/^Version:\s+[\d.]+/mi', 'Version: ' . $new_version, $contents);
+
+    file_put_contents($style_file, $contents);
+}
 
 /* ==================================================
  * 11. SECURITY AND BEST PRACTICES
@@ -659,8 +775,6 @@ add_action('admin_post_mailchimp_subscription_form', __NAMESPACE__ . '\\handle_m
 
 /**
  * Remove Unused Shortcodes or Functions
- * 
- * Ensure that any shortcodes or functions that are not in use are removed to keep the codebase clean.
  * 
  * Example:
  * remove_shortcode('unused_shortcode');
@@ -672,7 +786,6 @@ add_action('admin_post_mailchimp_subscription_form', __NAMESPACE__ . '\\handle_m
  * To prevent spam submissions, consider integrating Google reCAPTCHA or implementing a honeypot field.
  * 
  * **Honeypot Implementation:**
- * 
  * - Already implemented in the forms above.
  * 
  * **Google reCAPTCHA Integration:**
@@ -725,7 +838,6 @@ add_action('admin_post_mailchimp_subscription_form', __NAMESPACE__ . '\\handle_m
  * 
  * **Note:** Replace `'YOUR_SITE_KEY'` and `'YOUR_SECRET_KEY'` with your actual reCAPTCHA keys.
  */
-
 
 /* ==================================================
  * 12. OPTIONAL: SAVE EMAILS TO A LIST
@@ -783,9 +895,6 @@ add_action('admin_post_mailchimp_subscription_form', __NAMESPACE__ . '\\handle_m
  * 
  * **Note:** Ensure that you handle potential duplicates and errors appropriately.
  */
-
-
-
 
 /**
  * IMPORTANT:

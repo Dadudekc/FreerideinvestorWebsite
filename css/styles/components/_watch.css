@@ -1,0 +1,22 @@
+/* --------------------------------------------------------------
+   Watch Section
+-------------------------------------------------------------- */
+.watch {
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .watch-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-sm);
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: var(--spacing-xs);
+  }
+  
+  .watch-list li {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-sm);
+  }
+  

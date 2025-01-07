@@ -1,0 +1,43 @@
+/* --------------------------------------------------------------
+   Strategy Cards
+-------------------------------------------------------------- */
+.strategy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+  }
+  
+  .strategy-card {
+    background-color: var(--color-dark-grey);
+    padding: var(--spacing-md);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .strategy-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  .strategy-card h3 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-sm);
+    text-transform: uppercase;
+  }
+  
+  .strategy-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .strategy-card ul li {
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-text-base);
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  

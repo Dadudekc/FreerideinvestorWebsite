@@ -96,6 +96,7 @@
 @import url("base/_variables.css");
 @import url("base/_reset.css");
 @import url("base/_typography.css");
+@import url("base/_headings.css");
 @import url("base/_global.css");
 
 /* -----------------------------
@@ -105,14 +106,18 @@
 @import url("components/_call-to-action.css");
 @import url("components/_cards.css");
 @import url("components/_collapsible.css");
-@import url("components/_grid.css");
-@import url("components/_headings.css");
+@import url("components/_discord-widget.css");
 @import url("components/_hero.css");
 @import url("components/_highlight-boxes.css");
 @import url("components/_navigation.css");
-@import url("components/_subcategories.css");
+@import url("components/_setup.css");
+@import url("components/_sections.css");
+@import url("components/_strategy-cards.css");
 @import url("components/_tables.css");
 @import url("components/_tbow-tactics.css");
+@import url("components/_team.css");
+@import url("components/_values.css");
+@import url("components/_watch.css");
 
 /* -----------------------------
    Layout
@@ -120,18 +125,19 @@
 @import url("layout/_containers.css");
 @import url("layout/_grid.css");
 @import url("layout/_header-footer.css");
-@import url("layout/_hero.css"); /* Or merge with components/hero */
+@import url("layout/_responsive.css");
 
 /* -----------------------------
    Pages
 ----------------------------- */
 @import url("pages/_about-us.css");
 @import url("pages/_latest-posts.css");
+@import url("pages/_subscription.css");
+@import url("pages/_fintech-dashboard.css");
 
 /* -----------------------------
    Utilities
 ----------------------------- */
 @import url("utilities/_accessibility.css");
 @import url("utilities/_helpers.css");
-@import url("utilities/_responsive.css");
 @import url("utilities/_utilities.css");

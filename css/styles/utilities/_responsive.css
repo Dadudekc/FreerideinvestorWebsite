@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Freeride Investor</title>
+  <link rel="stylesheet" href="css/styles/main.css">
+</head>
+<body>
+  
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>Welcome to Freeride Investor</h1>
+    <p>Ride the wave of new opportunities with confidence.</p>
+    <a href="#" class="cta-button">Get Started</a>
+  </div>
+  
+  <!-- Tbow Tactics Section -->
+  <div class="tbow-tactics">
+    <h2 class="tbow-tactics-header">Tbow Tactics</h2>
+    <div class="tbow-grid">
+      <div class="tbow-item">
+        <p class="tbow-title">
+          <a href="#">Tactic #1</a>
+        </p>
+        <!-- Content -->
+      </div>
+      <!-- More Tbow Items -->
+    </div>
+    <ul class="tbow-tactics-list">
+      <li>Strategy A</li>
+      <li>Strategy B</li>
+      <!-- More List Items -->
+    </ul>
+  </div>
+  
+  <!-- Latest Posts Section -->
+  <div class="latest-posts">
+    <h2>Latest Articles</h2>
+    <div class="articles-grid">
+      <div class="article-item">
+        <div class="article-thumbnail">
+          <img src="path/to/image.jpg" alt="Article Image">
+        </div>
+        <div class="article-content">
+          <h3 class="article-title"><a href="#">Article Title</a></h3>
+          <p class="article-excerpt">Brief description of the article...</p>
+        </div>
+      </div>
+      <!-- More Articles -->
+    </div>
+  </div>
+  
+  <!-- Call to Action -->
+  <div class="call-to-action">
+    <h2>Ready to Join?</h2>
+    <p>Sign up for our newsletter to stay updated.</p>
+    <a href="#" class="cta-button">Sign Up</a>
+  </div>
+  
+  <!-- Additional Sections... -->
+  
+</body>
+</html>
