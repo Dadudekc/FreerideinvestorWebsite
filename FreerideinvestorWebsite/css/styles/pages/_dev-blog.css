@@ -1,0 +1,342 @@
+/* --------------------------
+   Root Setup
+-------------------------- */
+:root {
+  --color-dark-bg: #121212;
+  --color-dark-bg-alt: #1A1A1A;
+  --color-text-base: #EDEDED;
+  --color-text-muted: #BBBBBB;
+  --color-light-dark-green: #116611;
+  --color-border: #333333;
+  --color-accent: #1f7a3d; /* Accent color for buttons and highlights */
+  --color-accent-hover: #145d28; /* Darker accent on hover */
+  --color-background: #ffffff; /* Background color for buttons */
+  --color-background-alt: #0d3316; /* Alternative background color */
+
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --hero-bg-gradient: linear-gradient(135deg, #116611, #0e550e);
+}
+
+/* --------------------------
+   Global Styling
+-------------------------- */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  color: var(--color-text-base);
+  background: var(--color-dark-bg);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --------------------------
+   Hero Section
+-------------------------- */
+.hero {
+  background: var(--hero-bg-gradient);
+  color: var(--color-text-base);
+  text-align: center;
+  padding: 80px 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(44, 62, 80, 0.7); /* Overlay for better text visibility */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 3rem;
+  color: #000; /* Black color for "Development Blog" */
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  margin: 0 auto;
+  max-width: 800px;
+  color: var(--color-text-muted);
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  color: var(--color-background);
+}
+
+.btn-accent:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+}
+
+/* --------------------------
+   Overarching Goal Section
+-------------------------- */
+.overarching-goal {
+  background: var(--color-dark-bg-alt);
+  padding: 40px 20px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.section-heading {
+  font-size: 2rem;
+  color: var(--color-light-dark-green);
+  margin-bottom: 20px;
+}
+
+.goal-description {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* --------------------------
+   Updates Section
+-------------------------- */
+.updates {
+  padding: 40px 20px;
+}
+
+.updates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.update-item {
+  background: var(--color-dark-bg-alt);
+  padding: 20px;
+  border-radius: 5px;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  border: 1px solid var(--color-border);
+  position: relative;
+}
+
+.update-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.update-item h3 {
+  color: var(--color-light-dark-green);
+  margin-bottom: 10px;
+}
+
+.update-item p {
+  margin-bottom: 15px;
+  color: var(--color-text-base);
+}
+
+.update-list li {
+  margin-bottom: 5px;
+  color: var(--color-text-muted);
+  padding-left: 1.2em;
+  position: relative;
+}
+
+.update-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--color-light-dark-green);
+}
+
+/* --------------------------
+   Development Blog Posts
+-------------------------- */
+.dev-blog-posts {
+  padding: 40px 20px;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.blog-post {
+  background: var(--color-dark-bg-alt);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.blog-post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.blog-thumbnail img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.blog-post h3 {
+  padding: 15px;
+  font-size: 1.4rem;
+  color: var(--color-light-dark-green);
+  margin: 0;
+}
+
+.blog-post h3 a {
+  color: var(--color-light-dark-green);
+  transition: color var(--transition-fast);
+}
+
+.blog-post h3 a:hover {
+  color: #aaffaa; /* Lighter shade on hover */
+}
+
+.blog-post p {
+  padding: 0 15px;
+  margin-bottom: 15px;
+  color: var(--color-text-base);
+  flex-grow: 1;
+}
+
+.read-more {
+  display: inline-block;
+  padding: 10px 15px;
+  margin: 15px;
+  font-size: 1rem;
+  color: var(--color-light-dark-green);
+  border: 1px solid var(--color-light-dark-green);
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background var(--transition-fast), color var(--transition-fast);
+  text-align: center;
+}
+
+.read-more:hover {
+  background: var(--color-light-dark-green);
+  color: var(--color-dark-bg);
+}
+
+/* --------------------------
+   Footer Styling
+-------------------------- */
+.footer {
+  background: var(--color-dark-bg-alt);
+  color: var(--color-text-muted);
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 30px;
+  border-top: 1px solid var(--color-border);
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* --------------------------
+   Responsive Design
+-------------------------- */
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 15px;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .section-heading {
+    font-size: 1.8rem;
+  }
+
+  .goal-description,
+  .update-item p,
+  .blog-post p {
+    font-size: 1rem;
+  }
+
+  .read-more {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    margin: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 40px 10px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+  }
+
+  .section-heading {
+    font-size: 1.6rem;
+  }
+
+  .goal-description,
+  .update-item p,
+  .blog-post p {
+    font-size: 0.9rem;
+  }
+
+  .read-more {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+    margin: 10px;
+  }
+}

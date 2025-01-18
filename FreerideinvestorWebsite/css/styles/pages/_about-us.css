@@ -1,0 +1,31 @@
+/* --------------------------------------------------------------
+   About Page Sections
+-------------------------------------------------------------- */
+.about-us {
+  margin: var(--spacing-md) 0;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.about-content p {
+  flex: 1 1 60%;
+  color: var(--color-text-base);
+  line-height: 1.6;
+}
+
+.about-image {
+  flex: 1 1 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}

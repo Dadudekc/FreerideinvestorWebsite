@@ -1,0 +1,73 @@
+/*--------------------------------------------------------------
+  Navigation Menu
+--------------------------------------------------------------*/
+
+/* Navigation List Styling */
+.main-nav .nav-list {
+  list-style: none; /* Remove default list styling */
+  display: flex;
+  gap: var(--spacing-sm); /* Space between navigation items */
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap; /* Enable wrapping for smaller screens */
+  align-items: center; /* Vertically align items */
+}
+
+/* Navigation Links */
+.main-nav .nav-list li a {
+  display: inline-block; /* Ensure links are block-level for padding */
+  padding: var(--spacing-xs, 8px) var(--spacing-sm, 16px); /* Add clickable padding */
+  border-radius: 4px; /* Slightly larger rounding for a modern look */
+  color: var(--color-text-base); /* Default text color */
+  text-decoration: none; /* Remove underline */
+  font-weight: 600; /* Slightly bold for better readability */
+  transition: background-color var(--transition-fast, 0.2s ease), 
+              color var(--transition-fast, 0.2s ease); /* Smooth transitions */
+}
+
+/* Hover and Focus States */
+.main-nav .nav-list li a:hover,
+.main-nav .nav-list li a:focus {
+  background: var(--color-nav-hover-bg, rgba(255, 255, 255, 0.1)); /* Subtle hover effect */
+  color: var(--color-text-base); /* Maintain text color */
+  outline: 2px solid var(--color-accent, #1f7a3d); /* Focus outline for accessibility */
+  outline-offset: 2px; /* Slight gap between the outline and the element */
+}
+
+/* Active Navigation Link */
+.main-nav .nav-list li a.active {
+  background: var(--color-accent); /* Highlight active link */
+  color: var(--color-background, #ffffff); /* Contrast with accent color */
+  font-weight: 700; /* Bold for emphasis */
+}
+
+/*--------------------------------------------------------------
+  Responsive Adjustments
+--------------------------------------------------------------*/
+
+/* Navigation List for Smaller Screens */
+@media (max-width: 768px) {
+  .main-nav .nav-list {
+    flex-direction: column; /* Stack navigation items vertically */
+    align-items: flex-start; /* Align items to the left */
+    gap: var(--spacing-xs, 10px); /* Smaller gaps */
+  }
+
+  .main-nav .nav-list li a {
+    width: 100%; /* Make links full-width */
+    text-align: left; /* Align text to the left */
+    padding: var(--spacing-xs, 10px) var(--spacing-sm, 16px);
+  }
+}
+
+/* Optional: Adjust for Very Small Screens */
+@media (max-width: 480px) {
+  .main-nav .nav-list {
+    gap: var(--spacing-xs, 5px); /* Reduce gaps further */
+  }
+
+  .main-nav .nav-list li a {
+    font-size: 0.9rem; /* Slightly smaller font size */
+    padding: var(--spacing-xs, 8px) var(--spacing-sm, 12px); /* Adjust padding */
+  }
+}

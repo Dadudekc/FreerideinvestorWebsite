@@ -1,0 +1,67 @@
+/* --------------------------------------------------------------
+   Table Styles
+-------------------------------------------------------------- */
+
+/* General Table Styling */
+.table,
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--spacing-md) 0;
+  font-size: 1rem;
+  font-family: var(--font-family-base);
+  color: var(--color-text-base);
+  background-color: var(--color-dark-grey);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* Table Header */
+.table__header,
+table thead {
+  background-color: var(--color-dark-green);
+  color: var(--color-text-base);
+  font-weight: bold;
+}
+
+.table__header,
+table thead th {
+  text-align: left;
+  padding: var(--spacing-sm);
+  border-bottom: 2px solid var(--color-border);
+}
+
+/* Table Rows */
+.table__row,
+table tbody tr {
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.table__row:nth-child(even),
+table tbody tr:nth-child(even) {
+  background-color: var(--color-black);
+}
+
+.table__row:hover,
+table tbody tr:hover {
+  background-color: var(--color-light-dark-green);
+}
+
+/* Table Cells */
+.table__cell,
+table tbody td {
+  padding: var(--spacing-sm);
+  vertical-align: middle;
+  color: var(--color-text-muted);
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-md);
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}

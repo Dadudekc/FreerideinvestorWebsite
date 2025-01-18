@@ -1,0 +1,357 @@
+/*--------------------------------------------------------------
+  Import Font and CSS Variables
+--------------------------------------------------------------*/
+
+/* Import Roboto Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* CSS Variables */
+:root {
+    /* Color Palette */
+    --color-dark-bg: #121212;
+    --color-dark-bg-alt: #1A1A1A;
+    --color-text-base: #EDEDED;
+    --color-text-muted: #BBBBBB;
+    --color-light-dark-green: #116611;
+    --color-light-dark-green-hover: #33ff99; /* Predefined hover color */
+    --color-border: #333333;
+
+    /* Typography */
+    --font-primary: 'Roboto', sans-serif;
+
+    /* Transition */
+    --transition-speed: 0.3s;
+}
+
+/*--------------------------------------------------------------
+  Global Styles
+--------------------------------------------------------------*/
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-base);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: var(--color-light-dark-green);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+a:hover {
+    color: var(--color-light-dark-green-hover);
+    text-decoration: underline; /* Visual feedback for hover */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+/*--------------------------------------------------------------
+  Hero Section
+--------------------------------------------------------------*/
+
+.hero {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: #fff;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--color-text-muted);
+}
+
+/*--------------------------------------------------------------
+  Section Headers
+--------------------------------------------------------------*/
+
+.section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    display: inline-block;
+    color: var(--color-light-dark-green);
+}
+
+.section-title::after {
+    content: '';
+    width: 50px;
+    height: 4px;
+    background-color: var(--color-light-dark-green);
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+}
+
+.section-description {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+}
+
+/*--------------------------------------------------------------
+  Grid Layouts
+--------------------------------------------------------------*/
+
+.grid-layout {
+    display: grid;
+    gap: 2rem;
+}
+
+.tbow-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.articles-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+/*--------------------------------------------------------------
+  Article/Card Styles
+--------------------------------------------------------------*/
+
+.grid-item {
+    background-color: var(--color-dark-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 255, 0, 0.3); /* Green accent glow */
+}
+
+.thumbnail {
+    display: block;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-speed);
+}
+
+.thumbnail img:hover {
+    transform: scale(1.05);
+}
+
+.title {
+    font-size: 1.5rem;
+    margin: 1rem;
+    color: var(--color-light-dark-green);
+}
+
+.title a {
+    color: inherit;
+}
+
+.title a:hover {
+    color: var(--color-light-dark-green-hover);
+}
+
+.excerpt {
+    padding: 0 1rem 1.5rem 1rem;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+}
+
+/*--------------------------------------------------------------
+  No Content Messages
+--------------------------------------------------------------*/
+
+.no-tactics-found,
+.no-posts-found {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--color-dark-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    color: var(--color-text-base);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.no-tactics-found h3,
+.no-posts-found h3 {
+    color: var(--color-light-dark-green);
+    margin-bottom: 0.5rem;
+}
+
+.no-tactics-found p,
+.no-posts-found p {
+    color: var(--color-text-muted);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/*--------------------------------------------------------------
+  Pagination
+--------------------------------------------------------------*/
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.pagination a,
+.pagination span {
+    margin: 0 0.3rem;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    color: var(--color-light-dark-green);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.pagination a:hover {
+    background-color: var(--color-light-dark-green);
+    color: #fff;
+}
+
+.pagination .current {
+    background-color: var(--color-light-dark-green);
+    color: #fff;
+    border-color: var(--color-light-dark-green);
+}
+
+/*--------------------------------------------------------------
+  Get in Touch Section
+--------------------------------------------------------------*/
+
+.get-in-touch {
+    background-color: var(--color-dark-bg-alt);
+    padding: 4rem 0;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.get-in-touch .intro-text {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--color-text-base);
+}
+
+.contact-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.contact-card {
+    background-color: var(--color-dark-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 255, 0, 0.3);
+}
+
+.contact-card h3 {
+    margin-bottom: 1rem;
+    color: var(--color-light-dark-green);
+}
+
+.contact-card p {
+    margin-bottom: 1.5rem;
+    color: var(--color-text-muted);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color var(--transition-speed), transform 0.2s ease;
+}
+
+.btn-accent {
+    background-color: var(--color-light-dark-green);
+    color: var(--color-text-base);
+}
+
+.btn-accent:hover {
+    background-color: var(--color-light-dark-green-hover);
+    transform: scale(1.05);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-link {
+    font-size: 1.2rem;
+    color: var(--color-light-dark-green);
+    transition: color var(--transition-speed);
+}
+
+.social-link:hover {
+    color: var(--color-light-dark-green-hover);
+}
+
+/*--------------------------------------------------------------
+  Responsive Design
+--------------------------------------------------------------*/
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .thumbnail {
+        height: 150px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}

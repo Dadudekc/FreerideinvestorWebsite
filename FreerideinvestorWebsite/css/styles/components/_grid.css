@@ -1,0 +1,57 @@
+/* --------------------------------------------------------------
+   Grid Layout and Components
+-------------------------------------------------------------- */
+
+/* General Grid Layouts */
+.grid-layout,
+.updates-grid,
+.blog-grid,
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Unified minimum column size */
+  gap: var(--spacing-md);
+}
+
+/* Grid Items */
+.post-item,
+.update-item,
+.blog-post,
+.grid-item {
+  background-color: var(--color-dark-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: var(--spacing-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post-item:hover,
+.update-item:hover,
+.blog-post:hover,
+.grid-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Smaller column size for services */
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+/* Services and Posts */
+.services .service-item,
+.latest-posts .post-item {
+  margin-bottom: var(--spacing-sm);
+  background: var(--color-dark-grey);
+  padding: var(--spacing-sm);
+  border-radius: 5px;
+  border: 1px solid var(--color-border);
+  transition: background 0.2s ease-in-out;
+}
+
+.services .service-item:hover,
+.latest-posts .post-item:hover {
+  background: var(--color-dark-green);
+}

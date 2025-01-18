@@ -1,0 +1,86 @@
+body {
+  background-color: var(--color-dark-bg);
+  color: var(--color-text-base);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-sm);
+  line-height: var(--line-height-base);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+  font-weight: bold;
+  color: var(--color-text-base);
+  line-height: 1.2;
+}
+/*--------------------------------------------------------------
+  Typography
+--------------------------------------------------------------*/
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover,
+a:focus {
+  color: var(--color-text-base);
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+  font-weight: bold;
+  line-height: 1.2;
+  color: var(--color-text-base);
+}
+
+p {
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-base);
+}
+
+ul, ol {
+  padding-left: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-muted);
+}
+
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style: decimal;
+}
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  background-color: var(--color-dark-bg);
+  color: var(--color-text-base);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+  font-weight: bold;
+  line-height: 1.2;
+  color: var(--color-text-base);
+}
+
+p {
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-base);
+}

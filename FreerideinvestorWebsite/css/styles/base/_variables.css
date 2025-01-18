@@ -1,0 +1,94 @@
+/* _variables.css */
+:root {
+  /* Colors */
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --background-color: #f8f9fa;
+  --text-color: #212529;
+
+  /* Spacing */
+  --small-spacing: 8px;
+  --medium-spacing: 16px;
+  --large-spacing: 24px;
+
+  /* Font Sizes */
+  --small-font: 0.875rem;
+  --medium-font: 1rem;
+  --large-font: 1.25rem;
+
+  /* Border Radius */
+  --border-radius: 4px;
+
+  /* Transition */
+  --transition-speed: 0.3s;
+}
+
+/* _utilities.css */
+/* Utility classes for spacing */
+.margin-small { margin: var(--small-spacing); }
+.margin-medium { margin: var(--medium-spacing); }
+.margin-large { margin: var(--large-spacing); }
+
+.padding-small { padding: var(--small-spacing); }
+.padding-medium { padding: var(--medium-spacing); }
+.padding-large { padding: var(--large-spacing); }
+
+/* Utility classes for colors */
+.text-primary { color: var(--primary-color); }
+.text-secondary { color: var(--secondary-color); }
+.bg-primary { background-color: var(--primary-color); }
+.bg-secondary { background-color: var(--secondary-color); }
+.bg-light { background-color: var(--background-color); }
+
+/* Utility classes for font size */
+.text-small { font-size: var(--small-font); }
+.text-medium { font-size: var(--medium-font); }
+.text-large { font-size: var(--large-font); }
+
+/* Utility classes for border radius */
+.rounded { border-radius: var(--border-radius); }
+
+/* Utility classes for transitions */
+.transition { transition: all var(--transition-speed) ease-in-out; }
+
+/* Cleaned-Up Example: _buttons.css */
+.button {
+  display: inline-block;
+  padding: var(--medium-spacing) var(--large-spacing);
+  color: #fff;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: var(--border-radius);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition-speed);
+}
+
+.button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Layout Example: _grid.css */
+.grid {
+  display: grid;
+  gap: var(--medium-spacing);
+}
+
+.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* Component Example: _cards.css */
+.card {
+  background-color: var(--background-color);
+  padding: var(--medium-spacing);
+  border: 1px solid var(--secondary-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: var(--transition-speed);
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

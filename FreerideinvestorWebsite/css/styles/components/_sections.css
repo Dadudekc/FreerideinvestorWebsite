@@ -1,0 +1,71 @@
+/* --------------------------------------------------------------
+   Core Beliefs and Tactic Plan Section
+-------------------------------------------------------------- */
+
+/* General Section Styling */
+.section, .tactic-plan {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: var(--color-dark-bg-alt);
+  border-radius: 8px;
+  box-shadow: var(--box-shadow-light);
+}
+
+/* Tactic Plan Specific Adjustments */
+.tactic-plan {
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  color: var(--color-text-base);
+  font-family: var(--font-family-base);
+  line-height: 1.8;
+}
+
+.tactic-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Section Content Grid */
+.section-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+}
+
+/* Grid Items */
+.grid-item {
+  padding: var(--spacing-md);
+  background-color: var(--color-dark-grey);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--box-shadow-light);
+  position: relative;
+}
+
+.grid-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+/* Item Titles and Descriptions */
+.item-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-xs);
+}
+
+.item-description {
+  font-size: 1rem;
+  color: var(--color-text-base);
+  line-height: 1.6;
+  margin-top: var(--spacing-xs);
+}

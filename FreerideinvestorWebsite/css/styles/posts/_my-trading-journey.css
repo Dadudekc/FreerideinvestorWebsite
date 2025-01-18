@@ -1,0 +1,650 @@
+/* styles/posts/_my-trading-journey.css */
+/*--------------------------------------------------------------
+  _dev-blog.css
+  Purpose: Stylesheet for the FreeRideInvestor Development Blog,
+           handling the page-specific styles.
+--------------------------------------------------------------*/
+
+/* -----------------------------
+   General Styles
+----------------------------- */
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    color: var(--color-text-base);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* -----------------------------
+   Header Styles
+----------------------------- */
+.header {
+    background-color: var(--color-primary-bg);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    color: var(--color-text-base);
+    font-size: 1.8rem;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.navigation .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation .nav-list li a {
+    color: var(--color-text-base);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navigation .nav-list li a:hover {
+    color: var(--color-accent);
+}
+
+/* -----------------------------
+   Hero Section Styles
+----------------------------- */
+.hero {
+    background-color: var(--color-secondary-bg);
+    color: var(--color-text-base);
+    text-align: center;
+    padding: 100px 20px;
+    background-image: url('../images/hero-bg.jpg'); /* Optional: Add a background image */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(44, 62, 80, 0.7); /* Overlay for better text visibility */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    font-size: var(--font-size-lg);
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-accent {
+    background-color: var(--color-accent);
+    color: var(--color-background);
+}
+
+.btn-accent:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-2px);
+}
+
+/* -----------------------------
+   Section Headings
+----------------------------- */
+.section-heading {
+    color: var(--color-accent);
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--color-accent);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* -----------------------------
+   Introduction Section
+----------------------------- */
+.introduction {
+    padding: 60px 20px;
+    background-color: var(--color-background-alt);
+    text-align: center;
+}
+
+.introduction p {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-base);
+}
+
+/* -----------------------------
+   Table of Contents Styles
+----------------------------- */
+.table-of-contents {
+    padding: 60px 20px;
+    background-color: var(--color-background);
+}
+
+.toc-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.toc-item {
+    background-color: var(--color-dark-bg-alt);
+    color: var(--color-text-base);
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.toc-item:hover,
+.toc-item:focus {
+    background-color: var(--color-accent);
+    color: var(--color-background);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+.toc-item::after {
+    content: '\25BC'; /* Down arrow */
+    position: absolute;
+    right: 20px;
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.toc-item[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+}
+
+.toc-subgrid {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.toc-subgrid a.sub-item {
+    background-color: var(--color-dark-grey);
+    color: var(--color-text-base);
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.toc-subgrid a.sub-item:hover,
+.toc-subgrid a.sub-item:focus {
+    background-color: var(--color-accent);
+    color: var(--color-background);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+/* -----------------------------
+   Roadmap Section Styles
+----------------------------- */
+.roadmap {
+    padding: 60px 20px;
+}
+
+.phases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.phase-card {
+    background-color: var(--color-dark-bg-alt);
+    padding: 20px;
+    border-left: 4px solid var(--color-accent);
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.phase-card:hover,
+.phase-card:focus-within {
+    background-color: var(--color-dark-grey);
+    transform: translateY(-3px);
+}
+
+.phase-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--color-accent);
+}
+
+.phase-card h4 {
+    font-size: 1.2rem;
+    margin-top: 15px;
+    color: var(--color-accent);
+}
+
+.phase-card ul {
+    list-style: disc inside;
+    padding-left: 20px;
+}
+
+.phase-card ul ul {
+    list-style: circle inside;
+    margin-top: 5px;
+}
+
+/* -----------------------------
+   Key Highlights and Accomplishments Styles
+----------------------------- */
+.highlights {
+    padding: 60px 20px;
+}
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.highlight-card {
+    background-color: var(--color-dark-bg-alt);
+    padding: 20px;
+    border-left: 4px solid var(--color-accent);
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-card:hover,
+.highlight-card:focus-within {
+    background-color: var(--color-dark-grey);
+    transform: translateY(-2px);
+}
+
+.highlight-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--color-accent);
+}
+
+.highlight-card ul {
+    list-style: disc inside;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.highlight-card p {
+    font-size: 0.95rem;
+    color: var(--color-text-base);
+}
+
+/* -----------------------------
+   Progress Reviews Styles
+----------------------------- */
+.progress-reviews {
+    padding: 60px 20px;
+}
+
+.progress-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.progress-card {
+    background-color: var(--color-dark-bg-alt);
+    padding: 20px;
+    border-left: 4px solid #27ae60; /* Progress Border Color */
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.progress-card:hover,
+.progress-card:focus-within {
+    background-color: var(--color-dark-grey);
+    transform: translateY(-2px);
+}
+
+.progress-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--color-accent);
+}
+
+.progress-card ul {
+    list-style: disc inside;
+    padding-left: 20px;
+}
+
+/* -----------------------------
+   Workflow Improvement Plan Styles
+----------------------------- */
+.workflow-improvement-plan {
+    padding: 60px 20px;
+}
+
+.workflow-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.workflow-card {
+    background-color: var(--color-dark-bg-alt);
+    padding: 20px;
+    border-left: 4px solid #e67e22; /* Workflow Border Color */
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.workflow-card:hover,
+.workflow-card:focus-within {
+    background-color: var(--color-dark-grey);
+    transform: translateY(-2px);
+}
+
+.workflow-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--color-accent);
+}
+
+.workflow-card p {
+    font-size: 1rem;
+    color: var(--color-text-base);
+    margin-bottom: 10px;
+}
+
+.workflow-card ul {
+    list-style: disc inside;
+    padding-left: 20px;
+}
+
+.workflow-card ul ul {
+    list-style: circle inside;
+    margin-top: 5px;
+}
+
+/* Overall Workflow Adjustments */
+.workflow-improvement-plan h3 {
+    margin-top: 40px;
+    font-size: 1.5rem;
+}
+
+.workflow-improvement-plan ul {
+    list-style: disc inside;
+    padding-left: 20px;
+}
+
+.workflow-improvement-plan ul li {
+    margin-bottom: 8px;
+}
+
+/* -----------------------------
+   Outcome and Future Outlook Styles
+----------------------------- */
+.outcome {
+    padding: 60px 20px;
+}
+
+.outcome ol {
+    list-style: decimal inside;
+    padding-left: 20px;
+}
+
+.outcome ol li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+/* -----------------------------
+   Next Steps Styles
+----------------------------- */
+.next-steps {
+    padding: 60px 20px;
+}
+
+.next-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.next-step-section {
+    background-color: var(--color-dark-bg-alt);
+    padding: 20px;
+    border-left: 4px solid #8e44ad; /* Next Steps Border Color */
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.next-step-section:hover,
+.next-step-section:focus-within {
+    background-color: var(--color-dark-grey);
+    transform: translateY(-2px);
+}
+
+.next-step-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--color-accent);
+}
+
+.next-step-section ul {
+    list-style: disc inside;
+    padding-left: 20px;
+}
+
+.next-step-section ul li {
+    margin-bottom: 8px;
+}
+
+/* Immediate Actions */
+.next-steps ol {
+    list-style: decimal inside;
+    padding-left: 20px;
+}
+
+.next-steps ol li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+/* -----------------------------
+   Conclusion Section Styles
+----------------------------- */
+.conclusion {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: var(--color-background-alt);
+}
+
+.conclusion p {
+    font-size: 1.1rem;
+    color: var(--color-text-base);
+    margin-bottom: 20px;
+}
+
+.conclusion em {
+    display: block;
+    font-style: italic;
+    color: var(--color-text-muted);
+}
+
+/* -----------------------------
+   Footer Styles
+----------------------------- */
+.footer {
+    background-color: var(--color-primary-bg);
+    padding: 20px 0;
+    color: var(--color-text-muted);
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer p {
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.footer-links a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--color-accent);
+}
+
+/* -----------------------------
+   Utilities
+----------------------------- */
+hr {
+    border: 0;
+    height: 1px;
+    background-color: var(--color-border);
+    margin: 40px 0;
+}
+
+/* -----------------------------
+   Responsive Design
+----------------------------- */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navigation .nav-list {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navigation .nav-list li {
+        width: 100%;
+    }
+
+    .navigation .nav-list li a {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .hero {
+        padding: 80px 20px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-description {
+        font-size: var(--font-size-base);
+    }
+
+    .phases-grid,
+    .highlights-grid,
+    .progress-grid,
+    .workflow-grid,
+    .next-steps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .toc-container {
+        gap: 10px;
+    }
+
+    .toc-subgrid a.sub-item {
+        padding: 8px 16px;
+    }
+
+    /* Reduce padding and font sizes for smaller screens */
+    .section-heading {
+        font-size: 1.75rem;
+    }
+
+    .phase-card h3,
+    .highlight-card h3,
+    .progress-card h3,
+    .workflow-card h3,
+    .next-step-section h3,
+    .conclusion h2 {
+        font-size: 1.25rem;
+    }
+
+    .phase-card h4 {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .read-more {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .table-of-contents.no-background {
+        background-color: transparent; /* No background */
+    }
+
+}

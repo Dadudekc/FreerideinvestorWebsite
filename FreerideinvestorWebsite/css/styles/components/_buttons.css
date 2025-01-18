@@ -1,0 +1,98 @@
+/* _buttons.css */
+/* Consolidated button styles */
+.button {
+  display: inline-block;
+  padding: var(--medium-spacing) var(--large-spacing);
+  font-size: var(--medium-font);
+  font-weight: bold;
+  color: #fff;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: var(--border-radius);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+
+.button:hover {
+  background-color: var(--secondary-color);
+}
+
+.button-small {
+  padding: var(--small-spacing) var(--medium-spacing);
+  font-size: var(--small-font);
+}
+
+.button-large {
+  padding: var(--large-spacing) var(--x-large-spacing);
+  font-size: var(--large-font);
+}
+
+/* _cards.css */
+/* Cleaned-up card styles */
+.card {
+  background-color: var(--background-color);
+  padding: var(--medium-spacing);
+  border: 1px solid var(--secondary-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow var(--transition-speed);
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+  font-size: var(--large-font);
+  font-weight: bold;
+  margin-bottom: var(--small-spacing);
+}
+
+.card-content {
+  font-size: var(--medium-font);
+  line-height: 1.5;
+}
+
+.card-footer {
+  text-align: right;
+  margin-top: var(--medium-spacing);
+}
+
+/* _call-to-action.css */
+/* CTA styles */
+.call-to-action {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: var(--large-spacing);
+  text-align: center;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color var(--transition-speed);
+}
+
+.call-to-action:hover {
+  background-color: var(--secondary-color);
+}
+
+.call-to-action h2 {
+  font-size: var(--large-font);
+  margin-bottom: var(--medium-spacing);
+}
+
+.call-to-action a {
+  display: inline-block;
+  padding: var(--small-spacing) var(--medium-spacing);
+  font-size: var(--medium-font);
+  font-weight: bold;
+  color: #fff;
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  transition: background-color var(--transition-speed);
+}
+
+.call-to-action a:hover {
+  background-color: var(--secondary-color);
+}
