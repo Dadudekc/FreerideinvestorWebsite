@@ -1,0 +1,148 @@
+<style>
+        /* Root Variables */<br />
+        :root {<br />
+            --color-dark-bg: #121212;<br />
+            --color-dark-bg-alt: #1A1A1A;<br />
+            --color-text-base: #EDEDED;<br />
+            --color-text-muted: #BBBBBB;<br />
+            --color-accent: #116611;<br />
+            --color-border: #333333;<br />
+            --transition-fast: 0.2s ease;<br />
+            --transition-normal: 0.3s ease;<br />
+        }</p>
+<p>        /* Base Styles */<br />
+        body {<br />
+            font-family: 'Roboto', sans-serif;<br />
+            margin: 0;<br />
+            color: var(--color-text-base);<br />
+            background: var(--color-dark-bg);<br />
+            line-height: 1.6;<br />
+        }<br />
+        a {<br />
+            text-decoration: none;<br />
+            color: inherit;<br />
+        }<br />
+        ul {<br />
+            margin: 0;<br />
+            padding: 0;<br />
+            list-style: none;<br />
+        }</p>
+<p>        .container {<br />
+            max-width: 1200px;<br />
+            margin: 0 auto;<br />
+            padding: 20px;<br />
+        }</p>
+<p>        /* Header Section */<br />
+        header {<br />
+            background: var(--color-dark-bg-alt);<br />
+            padding: 20px;<br />
+            text-align: center;<br />
+            border-bottom: 2px solid var(--color-border);<br />
+        }<br />
+        header h1 {<br />
+            color: var(--color-accent);<br />
+            font-size: 2.5rem;<br />
+            margin: 0;<br />
+        }<br />
+        header p {<br />
+            color: var(--color-text-muted);<br />
+            font-size: 1.2rem;<br />
+            margin: 5px 0 0;<br />
+        }</p>
+<p>        /* Section Styles */<br />
+        section {<br />
+            margin-bottom: 40px;<br />
+        }<br />
+        section h2 {<br />
+            color: var(--color-accent);<br />
+            font-size: 2rem;<br />
+            border-bottom: 2px solid var(--color-border);<br />
+            padding-bottom: 5px;<br />
+            margin-bottom: 20px;<br />
+        }<br />
+        .card {<br />
+            background: var(--color-dark-bg-alt);<br />
+            padding: 20px;<br />
+            border-radius: 8px;<br />
+            border: 1px solid var(--color-border);<br />
+            transition: box-shadow var(--transition-normal);<br />
+        }<br />
+        .card:hover {<br />
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);<br />
+        }<br />
+        .card ul {<br />
+            color: var(--color-text-muted);<br />
+            padding-left: 20px;<br />
+        }<br />
+        .card ul li {<br />
+            margin-bottom: 10px;<br />
+        }<br />
+        .card ul li::before {<br />
+            content: "\2022"; /* Bullet symbol */<br />
+            color: var(--color-accent);<br />
+            font-weight: bold;<br />
+            display: inline-block;<br />
+            width: 1em;<br />
+        }</p>
+<p>        /* Footer */<br />
+        footer {<br />
+            background: var(--color-dark-bg-alt);<br />
+            color: var(--color-text-muted);<br />
+            text-align: center;<br />
+            padding: 20px;<br />
+            margin-top: 40px;<br />
+        }<br />
+    </style>
+<header>Enhancing reliability and maintainability through rigorous testing and best practices.</p>
+</header>
+<div class="container"><!-- Introduction Section --></p>
+<section>
+<h2>Introduction</h2>
+<div class="card">
+<p>When building a project, ensuring your code is reliable and robust isn’t optional—it’s foundational. In this post, we’ll explore the journey of refining <code>data_fetch_utils.py</code>, tackling challenges, implementing rigorous testing, and achieving an impressive 83% test coverage.</p>
+</div>
+</section>
+<p><!-- Initial Testing and Challenges --></p>
+<section>
+<h2>Initial Testing and Challenges</h2>
+<div class="card">
+<p>Our initial testing phase revealed several critical issues, including:</p>
+<ul>
+<li>Missing <code>FINNHUB_API_KEY</code> caused errors instead of warnings.</li>
+<li>Improper exception handling for invalid date formats.</li>
+<li>Incorrect mocking of external APIs during integration tests.</li>
+</ul>
+</div>
+</section>
+<p><!-- Addressing Test Failures --></p>
+<section>
+<h2>Addressing Test Failures</h2>
+<div class="card">
+<ul>
+<li><strong>Fixing Missing Environment Variables:</strong> Ensured isolated testing for each missing key scenario.</li>
+<li><strong>Handling Invalid Date Formats:</strong> Updated methods to catch and handle errors consistently.</li>
+<li><strong>Correcting Integration Tests:</strong> Mocked API responses for accurate validation.</li>
+</ul>
+</div>
+</section>
+<p><!-- Achieving Test Coverage --></p>
+<section>
+<h2>Achieving 83% Test Coverage</h2>
+<div class="card">
+<p>By expanding the test suite and covering critical paths, we achieved a solid 83% test coverage, highlighting:</p>
+<ul>
+<li>Reliability in handling edge cases.</li>
+<li>Comprehensive mocking of external dependencies.</li>
+<li>Improved maintainability and future scalability.</li>
+</ul>
+</div>
+</section>
+<p><!-- Conclusion --></p>
+<section>
+<h2>Conclusion</h2>
+<div class="card">
+<p>Refining <code>data_fetch_utils.py</code> has been a journey of iteration and improvement. By addressing failures, enhancing test coverage, and embedding best practices, we’ve created a dependable foundation for future growth and innovation.</p>
+</div>
+</section>
+</div>
+<footer>© 2025 FreeRide Investor. All rights reserved.</footer>

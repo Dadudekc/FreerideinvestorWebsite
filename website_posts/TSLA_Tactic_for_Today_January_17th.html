@@ -1,0 +1,92 @@
+<style>
+    /* Base Styles */&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;    body {&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        font-family: Arial, sans-serif;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        background-color: #121212;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        color: #e0e0e0;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        margin: 0;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        padding: 0;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;    }&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;    .container {&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        max-width: 1200px;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        margin: 20px auto;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        padding: 20px;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        background-color: #1e1e1e;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        border-radius: 12px;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;    }&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;    h1, h2, h3 {&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        color: #2ecc71;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        text-align: center;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;    }&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;    .section {&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        margin-bottom: 40px;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;    }&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;    .card {&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        background-color: #2e2e2e;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        border: 1px solid #333;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        border-radius: 8px;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        padding: 20px;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        margin-bottom: 20px;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;    }&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;    .card h3 {&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        color: #f0f0f0;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        font-size: 1.6rem;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        margin-bottom: 10px;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;    }&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;    .card ul {&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        color: #e0e0e0;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        font-size: 1.2rem;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        list-style-type: none;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        padding-left: 20px;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;    }&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;    .highlight {&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        color: #2ecc71;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        font-weight: bold;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;    }&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;    footer {&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        text-align: center;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        padding: 20px;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        background-color: #1a1a1a;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        color: #bbb;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;        margin-top: 40px;&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;    }&amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;gt;</style>
+<div class="container">
+<h1></h1>
+<h2>Yesterday&#8217;s Plan in Action</h2>
+<div class="section">
+<div class="card">
+<h3>Overview</h3>
+<ul>
+<li>Yesterday, I was telling y’all about how I was doing the thing… well, right now that thing is doing its thing! 🚀</li>
+<li>We held TSLA overnight, and it looks like it was the right move.</li>
+<li>The $417.5 call is showing strong pre-market potential, holding steady at $418.90 (+1.23%).</li>
+</ul>
+</div>
+</div>
+<h2>Market Overview</h2>
+<div class="section">
+<div class="card">
+<h3>Market Sentiment</h3>
+<ul>
+<li><strong>Market Status:</strong> Neutral to slightly bullish.</li>
+<li><strong>VIX:</strong> Low, indicating minimal fear.</li>
+</ul>
+</div>
+<div class="card">
+<h3>Sector Overview</h3>
+<ul>
+<li><strong>Tech sector performance:</strong> Leading today, with Tesla showing resilience.</li>
+<li><strong>Macroeconomic factors:</strong> Interest rates and inflationary pressures are in focus.</li>
+</ul>
+</div>
+</div>
+<h2>Tesla (TSLA) Specific Analysis</h2>
+<div class="section">
+<div class="card">
+<h3>Price Action</h3>
+<ul>
+<li><strong>Current Price:</strong> $418.90 (pre-market).</li>
+<li><strong>Resistance:</strong> $419 (key breakout level).</li>
+<li><strong>Support:</strong> $417.</li>
+</ul>
+</div>
+<div class="card">
+<h3>Volume &amp; News</h3>
+<ul>
+<li><strong>Volume:</strong> Pre-market volume supports bullish continuation.</li>
+<li><strong>Sentiment:</strong> Bullish on Stocktwits and broader social platforms.</li>
+</ul>
+</div>
+</div>
+<h2>Key Concern: Selling at Open?</h2>
+<div class="section">
+<div class="card">
+<h3>Should You Sell?</h3>
+<ul>
+<li><strong>Reasons to Hold:</strong>If Tesla breaks above $419 with volume, it may rally toward $421–$422.
+<ul>
+<li>Momentum indicators (MACD and RSI) suggest further upside.</li>
+</ul>
+</li>
+<li><strong>Reasons to Sell:</strong>Pre-market gains (+1.23%) may lead to profit-taking at open.
+<ul>
+<li>RSI near 70 indicates potential overbought conditions.</li>
+</ul>
+</li>
+<li><strong>Balanced Strategy:</strong>Consider selling part of the position at open to lock in gains.
+<ul>
+<li>Use a trailing stop-loss to protect profits on the remaining position.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<h2>Execution &amp; Risk Management</h2>
+<div class="section">
+<div class="card">
+<h3>Entry and Exit Points</h3>
+<ul>
+<li><strong>Entry:</strong> Long if price breaks above $419 with volume.</li>
+<li><strong>Exit:</strong> Target $421–$422, with a stop-loss at $417.</li>
+</ul>
+</div>
+<div class="card">
+<h3>Risk Management</h3>
+<ul>
+<li><strong>Risk per trade:</strong> 1-2% of your portfolio.</li>
+<li><strong>Trailing stops:</strong> Set after hitting $421 to lock in profits.</li>
+</ul>
+</div>
+</div>
+<footer>Prepared by <span class="highlight">FreeRide Investor</span> | January 17, 2025</footer>
+</div>

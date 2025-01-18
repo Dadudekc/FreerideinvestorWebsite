@@ -1,0 +1,33 @@
+<p>    <div class="stock-research-dashboard">
+        <h1>Stock Research Tool</h1>
+        <form id="stock-research-form">
+            <input type="hidden" id="security" name="security" value="fb8667db40" /><input type="hidden" name="_wp_http_referer" value="/wp-json/wp/v2/posts?per_page=100&#038;page=1" />            <label for="stock-symbol">Stock Symbols:</label>
+            <input type="text" id="stock-symbol" name="stock_symbols" placeholder="e.g., TSLA, AAPL, GOOGL" required aria-required="true">
+            <button type="submit">Fetch Data</button>
+        </form>
+        <div id="stocks-container" aria-live="polite" aria-atomic="true"></div>
+
+        <h2>Set Up Email Alerts</h2>
+        <form id="alert-form">
+            <label for="alert-email">Email Address:</label>
+            <input type="email" id="alert-email" name="alert_email" placeholder="your-email@example.com" required>
+
+            <label for="alert-symbol">Stock Symbol:</label>
+            <input type="text" id="alert-symbol" name="alert_symbol" placeholder="e.g., TSLA" required>
+
+            <label for="alert-type">Alert Type:</label>
+            <select id="alert-type" name="alert_type" required>
+                <option value="price_above">Price Above</option>
+                <option value="price_below">Price Below</option>
+                <option value="sentiment_above">Sentiment Above</option>
+                <option value="sentiment_below">Sentiment Below</option>
+            </select>
+
+            <label for="alert-value">Condition Value:</label>
+            <input type="text" id="alert-value" name="alert_value" placeholder="Enter the value" required>
+
+            <button type="submit">Set Alert</button>
+        </form>
+        <div id="alert-message"></div>
+    </div>
+    </p>
