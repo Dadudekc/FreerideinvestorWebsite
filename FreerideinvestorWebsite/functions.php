@@ -733,6 +733,71 @@ function freerideinvestor_enqueue_productivity_assets() {
         array( 'ajax_url' => admin_url( 'admin-ajax.php' ) )
     );
 }
+
+// Shortcode to Display Productivity Board
+function freeride_productivity_board_shortcode() {
+    ob_start();
+    ?>
+    <!-- Productivity Board HTML Structure -->
+    <div id="freeride-orb">
+        <div id="astra-ignis"></div>
+        <div id="progress-ring"></div>
+        <div id="focus-streak"></div>
+        <div id="session-goals">
+            Sessions: <span id="session-count">0</span>
+        </div>
+    </div>
+
+    <div id="timer">25:00</div>
+    <button class="button" id="startBtn">Start</button>
+    <button class="button" id="resetBtn" disabled>Reset</button>
+
+    <div id="task-list">
+        <h2>Guided Tasks</h2>
+        <div id="task-lists">
+            <div class="list" id="to-do">
+                <h3>To Do</h3>
+                <div class="tasks"></div>
+            </div>
+            <div class="list" id="in-progress">
+                <h3>In Progress</h3>
+                <div class="tasks"></div>
+            </div>
+            <div class="list" id="done">
+                <h3>Done</h3>
+                <div class="tasks"></div>
+            </div>
+        </div>
+
+        <!-- Task Input Controls -->
+        <div id="task-controls">
+            <input type="text" id="taskInput" placeholder="New Task" />
+            <select id="prioritySelect">
+                <option value="high">High</option>
+                <option value="medium" selected>Medium</option>
+                <option value="low">Low</option>
+            </select>
+            <button class="button" id="addTaskBtn">Add Task</button>
+        </div>
+
+        <!-- JSON Upload Controls -->
+        <div id="json-upload-controls">
+            <input type="file" id="jsonFileInput" accept=".json" />
+            <button class="button" id="uploadJSONBtn">Upload JSON</button>
+        </div>
+    </div>
+
+    <!-- Analytics Panel -->
+    <div id="analytics-panel" class="collapsed">
+        <h2>Productivity Analytics</h2>
+        <canvas id="tasksChart" width="400" height="200"></canvas>
+    </div>
+    <button id="toggle-analytics" class="button">Show Analytics</button>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('freeride_productivity_board', 'freeride_productivity_board_shortcode');
+
 /* ==================================================
  * 10. SECURITY AND BEST PRACTICES
  * ================================================== */
