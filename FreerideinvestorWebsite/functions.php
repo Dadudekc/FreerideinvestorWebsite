@@ -733,6 +733,7 @@ function freerideinvestor_enqueue_productivity_assets() {
         array( 'ajax_url' => admin_url( 'admin-ajax.php' ) )
     );
 }
+add_action('wp_enqueue_scripts', 'freerideinvestor_enqueue_productivity_assets');
 
 // Shortcode to Display Productivity Board
 function freeride_productivity_board_shortcode() {
@@ -797,7 +798,6 @@ function freeride_productivity_board_shortcode() {
     return ob_get_clean();
 }
 add_shortcode('freeride_productivity_board', 'freeride_productivity_board_shortcode');
-
 /* ==================================================
  * 10. SECURITY AND BEST PRACTICES
  * ================================================== */
