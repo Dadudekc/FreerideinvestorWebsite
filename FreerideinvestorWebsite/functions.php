@@ -707,6 +707,33 @@ function handle_ebook_download_form() {
 add_action('admin_post_nopriv_ebook_download_form', __NAMESPACE__ . '\\handle_ebook_download_form');
 add_action('admin_post_ebook_download_form', __NAMESPACE__ . '\\handle_ebook_download_form');
 
+// Enqueue Custom Styles and Scripts for Productivity Board
+function freerideinvestor_enqueue_productivity_assets() {
+    // Enqueue CSS
+    wp_enqueue_style(
+        'freeride-productivity-css',
+        get_stylesheet_directory_uri() . '/css/freeride-productivity.css',
+        array(),
+        '1.0'
+    );
+
+    // Enqueue JS
+    wp_enqueue_script(
+        'freeride-productivity-js',
+        get_stylesheet_directory_uri() . '/js/freeride-productivity.js',
+        array('jquery'), // Dependencies
+        '1.0',
+        true // Load in footer
+    );
+
+    // Localize script to pass AJAX URL if needed in future
+    wp_localize_script(
+        'freeride-productivity-js',
+        'freeride_ajax_obj',
+        array( 'ajax_url' => admin_url( 'admin-ajax.php' ) )
+    );
+}
+add_action('wp_enqueue_scripts', 'freerideinvestor_enqueue_productivity_assets');
 
 /* ==================================================
  * 10. SECURITY AND BEST PRACTICES
