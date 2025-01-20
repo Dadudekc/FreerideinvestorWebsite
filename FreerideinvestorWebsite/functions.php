@@ -712,7 +712,7 @@ function freerideinvestor_enqueue_productivity_assets() {
     // Enqueue CSS
     wp_enqueue_style(
         'freeride-productivity-css',
-        get_stylesheet_directory_uri() . '/css/freeride-productivity.css',
+        get_stylesheet_directory_uri() . '/css/styles/pages/freeride-productivity.css',
         array(),
         '1.0'
     );
@@ -733,8 +733,6 @@ function freerideinvestor_enqueue_productivity_assets() {
         array( 'ajax_url' => admin_url( 'admin-ajax.php' ) )
     );
 }
-add_action('wp_enqueue_scripts', 'freerideinvestor_enqueue_productivity_assets');
-
 /* ==================================================
  * 10. SECURITY AND BEST PRACTICES
  * ================================================== */
