@@ -1,0 +1,18 @@
+[
+    {
+      "text": "Implement new trade API calls",
+      "priority": "high",
+      "category": "to-do"
+    },
+    {
+      "text": "Draft investment newsletter",
+      "priority": "medium",
+      "category": "in-progress"
+    },
+    {
+      "text": "Review financial results",
+      "priority": "low",
+      "category": "done"
+    }
+  ]
+  
