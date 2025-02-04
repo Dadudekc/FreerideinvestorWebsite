@@ -43,6 +43,7 @@ def fetch_all_posts(api_url, per_page=100):
             page += 1
         else:
             print(f"Failed to fetch posts on page {page}: {response.status_code}")
+            print(f"Response content: {response.text}")
             break
 
     return all_posts
