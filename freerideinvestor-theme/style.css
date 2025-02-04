@@ -1,0 +1,17 @@
+/*
+Theme Name: freerideinvestor
+Theme URI:  https://freerideinvestor.com
+Author:     Victor Dixon
+Author URI: https://freerideinvestor.com
+Description: A professional, dark-themed WordPress theme focused on simplicity, user engagement, accessibility, and empowering traders and investors with tools, education, and community engagement.
+Version:    2.2
+License:    GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: freerideinvestor
+*/
+
+/*--------------------------------------------------------------
+  Import Modular CSS Files
+--------------------------------------------------------------*/
+@import url("css/styles/main.css");
+

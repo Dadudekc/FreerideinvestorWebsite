@@ -1,0 +1,114 @@
+/* General Styling for Get in Touch Section */
+.get-in-touch {
+    background-color: var(--color-dark-bg-alt); /* Slightly lighter background */
+    padding: 3rem 1.5rem; /* Balanced padding */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    margin-top: 2rem; /* Space from the section above */
+    text-align: center; /* Ensure consistent text alignment */
+}
+
+.get-in-touch .section-title {
+    font-size: 2rem; /* Large title font size */
+    font-weight: bold; /* Bold title */
+    color: var(--color-light-dark-green); /* Accent color */
+    margin-bottom: 1rem; /* Space below the title */
+}
+
+.get-in-touch .intro-text {
+    font-size: 1rem; /* Regular font size for description */
+    color: var(--color-text-muted); /* Muted text color */
+    margin-bottom: 2rem; /* Space below the intro text */
+}
+
+/* Grid Layout for Contact Cards */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive card sizing */
+    gap: 2rem; /* Spacing between cards */
+    align-items: stretch; /* Ensure cards are of equal height */
+}
+
+/* Contact Card Styling */
+.contact-card {
+    background-color: var(--color-dark-bg); /* Card background */
+    border: 1px solid var(--color-border); /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 2rem; /* Internal padding */
+    text-align: center; /* Center-align content */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* Light shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    display: flex;
+    flex-direction: column; /* Vertical alignment */
+    justify-content: space-between; /* Distribute elements */
+}
+
+.contact-card:hover {
+    transform: translateY(-5px); /* Lift on hover */
+    box-shadow: 0 8px 12px rgba(0, 255, 0, 0.3); /* Green accent glow */
+}
+
+/* Contact Card Title */
+.contact-card h3 {
+    font-size: 1.5rem; /* Bold title */
+    font-weight: bold;
+    color: var(--color-light-dark-green);
+    margin-bottom: 1rem; /* Space below the title */
+}
+
+/* Contact Card Description */
+.contact-card p {
+    font-size: 1rem; /* Regular font size */
+    color: var(--color-text-muted); /* Muted color */
+    margin-bottom: 1.5rem; /* Space below the description */
+    line-height: 1.6; /* Comfortable line height */
+}
+
+/* Button Styling */
+.contact-card .btn {
+    display: inline-block; /* Inline button */
+    padding: 0.8rem 1.5rem; /* Button padding */
+    font-size: 1rem; /* Button text size */
+    font-weight: bold; /* Bold button text */
+    text-transform: uppercase; /* All caps */
+    color: var(--color-text-base); /* White text */
+    background-color: var(--color-light-dark-green); /* Green background */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded button */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+    margin: auto; /* Center button horizontally */
+    width: fit-content; /* Prevent button stretching */
+}
+
+.contact-card .btn:hover {
+    background-color: var(--color-light-dark-green-hover); /* Lighter green on hover */
+    transform: scale(1.05); /* Slight scaling */
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    justify-content: center; /* Center social links */
+    gap: 1rem; /* Space between links */
+    margin-top: 1rem; /* Space above social links */
+}
+
+.social-link {
+    font-size: 1rem; /* Regular font size */
+    font-weight: bold; /* Bold links */
+    color: var(--color-light-dark-green); /* Green text */
+    text-decoration: none; /* No underline */
+    transition: color 0.3s ease; /* Smooth hover effects */
+}
+
+.social-link:hover {
+    color: var(--color-light-dark-green-hover); /* Lighter green on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr; /* Stack cards on small screens */
+    }
+}

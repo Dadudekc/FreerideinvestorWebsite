@@ -1,0 +1,52 @@
+/*--------------------------------------------------------------
+  Hero Section
+--------------------------------------------------------------*/
+.hero {
+  text-align: center;
+  padding: var(--spacing-lg) var(--spacing-sm);
+  background: linear-gradient(135deg, var(--color-dark-green), var(--color-light-dark-green));
+  color: var(--color-text-base);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin: var(--spacing-md) auto;
+  max-width: 1200px;
+  box-sizing: border-box;
+  position: relative; /* Ensures pseudo-elements position correctly */
+}
+
+/* Override the ::after pseudo-element */
+.hero::after {
+  content: none !important; /* Removes the overlay completely */
+}
+
+/* Hero Heading */
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-base);
+}
+
+/* Hero Paragraph */
+.hero p {
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-muted);
+  font-size: 1.2rem;
+}
+
+/* Call-to-Action Button */
+.hero .cta-button {
+  background: var(--color-accent);
+  color: var(--color-black);
+  padding: 12px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.hero .cta-button:hover,
+.hero .cta-button:focus {
+  background: var(--color-nav-hover-bg);
+  color: var(--color-text-base);
+  transform: scale(1.05);
+}

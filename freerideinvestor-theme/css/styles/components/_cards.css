@@ -1,0 +1,56 @@
+/* --------------------------------------------------------------
+   Cards
+-------------------------------------------------------------- */
+.grid-item,
+.news-card,
+.article-item,
+.team-member.post-item {
+  background-color: var(--color-dark-grey);
+  padding: var(--spacing-sm); /* Unified padding for consistency */
+  border-radius: 5px; /* Consistent border radius */
+  box-shadow: var(--box-shadow-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item:hover,
+.news-card:hover,
+.article-item:hover,
+.team-member.post-item:hover,
+.news-card:focus-within {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.news-card__title,
+.article-title,
+.team-member.post-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-accent);
+}
+
+.news-card__title a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.news-card__title a:hover,
+.news-card__title a:focus {
+  color: var(--color-nav-hover-bg);
+}
+
+.news-card__description {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+.card {
+    background-color: var(--color-dark-bg-alt); /* Darker background */
+    color: var(--color-text-base); /* Bright text for contrast */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--color-border);
+}

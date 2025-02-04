@@ -1,0 +1,173 @@
+/*--------------------------------------------------------------
+  Base Styles
+--------------------------------------------------------------*/
+
+/* Use Freeride Investor's Brand Variables */
+:root {
+  --color-black: #000000;
+  --color-dark-grey: #1E1E1E;
+  --color-dark-green: #003300;
+  --color-light-dark-green: #116611;
+  --color-nav-hover-bg: #228822;
+  --color-dark-bg: #121212;
+  --color-dark-bg-alt: #1A1A1A;
+
+  --color-text-base: #EDEDED;
+  --color-text-muted: #BBBBBB;
+  --color-accent: var(--color-light-dark-green);
+  --color-border: #333333;
+
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+
+  --font-family-base: 'Roboto', sans-serif;
+  --font-size-base: 16px;
+  --line-height-base: 1.5;
+  --box-shadow-light: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  --box-shadow-hover: 0px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/*--------------------------------------------------------------
+  Freeride Investor Plugin Styles
+--------------------------------------------------------------*/
+
+/* Main Plugin Container */
+.stock-research-dashboard {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: var(--spacing-md);
+  background-color: var(--color-dark-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: var(--box-shadow-light);
+  color: var(--color-text-base);
+}
+
+/* Headings */
+.stock-research-dashboard h1 {
+  font-size: 2rem;
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+/* Input & Button Styles */
+#stock-research-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: var(--spacing-md);
+}
+
+#stock-research-form input {
+  flex: 1 1 60%;
+  padding: var(--spacing-xs);
+  margin-right: var(--spacing-sm);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background-color: var(--color-dark-grey);
+  color: var(--color-text-base);
+}
+
+#stock-research-form button {
+  flex: 1 1 auto;
+  background-color: var(--color-accent);
+  color: var(--color-black);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#stock-research-form button:hover {
+  background-color: var(--color-nav-hover-bg);
+  transform: translateY(-2px);
+}
+
+/* Results Section */
+#stocks-container {
+  margin-top: var(--spacing-lg);
+}
+
+.stock-section {
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background-color: var(--color-dark-grey);
+  border-radius: 8px;
+  box-shadow: var(--box-shadow-light);
+}
+
+.stock-section h2 {
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-md);
+}
+
+.stock-section p {
+  color: var(--color-text-muted);
+}
+
+/* News List */
+.stock-data ul {
+  list-style: disc;
+  padding-left: var(--spacing-md);
+}
+
+.stock-data ul li a {
+  color: var(--color-text-base);
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.stock-data ul li a:hover {
+  color: var(--color-accent);
+}
+
+/* Charts Section */
+.historical-chart canvas {
+  width: 100% !important;
+  height: 400px !important;
+}
+
+/* Trade Plan Section */
+.trade-plan {
+  background-color: var(--color-dark-bg-alt);
+  padding: var(--spacing-md);
+  border-radius: 8px;
+  margin-top: var(--spacing-md);
+}
+
+.trade-plan h3 {
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-sm);
+}
+
+.trade-plan pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background-color: var(--color-dark-grey);
+  padding: var(--spacing-sm);
+  border-radius: 4px;
+  color: var(--color-text-muted);
+}
+
+/* Spinner Styles */
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border-left-color: var(--color-accent);
+  animation: spin 1s ease infinite;
+  margin: var(--spacing-md) auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

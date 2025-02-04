@@ -1,0 +1,169 @@
+/*--------------------------------------------------------------
+  main.css
+  Purpose: Serve as the central stylesheet for the Freeride Investor website project by
+  importing modular styles from partials. This file defines 
+  a cohesive style guide for generating consistent pages, posts, 
+  and templates.
+
+  General Description of Style:
+  - **Visual Identity:** Modern, clean, and minimal with a focus on readability and accessibility.
+  - **Typography:** Uses 'Roboto' as the primary font, featuring clean sans-serif styling with a focus on legibility. Headers are bold and structured, while body text is muted for balance.
+  - **Color Palette:** A dark mode-inspired palette with neutral greys, vibrant green accents, and high-contrast elements for highlights.
+  - **Layout:** Grid-based, responsive, and mobile-first. Containers are centered with consistent padding and spacing.
+  - **Components:** Designed with modularity in mind, including buttons, cards, collapsible elements, tables, and call-to-action components.
+  - **Hover & Transition Effects:** Subtle but noticeable, focusing on scale and color transitions for interactivity without overwhelming the user.
+  - **Box Shadows:** Light and elegant to create depth while maintaining a clean aesthetic.
+  - **Target Audience:** Tech-savvy users, investors, and day traders looking for professional, accessible, and visually appealing financial insights.
+
+  Freeride Investor Website Context:
+  - **Purpose:** Freeride Investor is focused on providing resources, tools, and analysis for investors and day traders. The website integrates actionable insights, market trends, and educational content with an emphasis on user engagement and strategic decision-making.
+  - **Key Features:**
+    - Blog posts offering market analysis and trading strategies.
+    - Interactive tools for stock market technical analysis.
+    - A clean, user-friendly interface for real-time updates and educational content.
+  - **Design Philosophy:** Designed to inspire confidence, promote clarity, and ensure ease of navigation for users seeking actionable financial insights through a learn-with-me environment as we set a trail and make our mark in the market.
+
+  Hashtag Guide:
+  - The following hashtags align with the website's themes and are useful for building social media posts, SEO, and content campaigns:
+
+  ### Specific to Your Brand/Initiatives:  
+    1. #ForevolutionizingFintech  
+    2. #FreerideInvestor  
+    3. #TBOWTactics  
+    4. #TSLA  
+    5. #FRISAC  
+    6. #ANDTHESTREAKCONTINUES  
+
+  ### Stock Market & Trading:
+    7. #StockMarket  
+    8. #DayTrading  
+    9. #TechnicalAnalysis  
+    10. #OptionsTrading  
+    11. #MarketTrends  
+    12. #SwingTrading  
+    13. #TradingStrategies  
+    14. #ChartPatterns  
+    15. #BullishBreakout  
+    16. #BearishReversal  
+
+  ### Investing:
+    17. #LongTermInvesting  
+    18. #ValueInvesting  
+    19. #GrowthStocks  
+    20. #PassiveIncome  
+    21. #PortfolioManagement  
+    22. #WealthBuilding  
+
+  ### Fintech & Innovation:
+    23. #FintechRevolution  
+    24. #AIInFinance  
+    25. #InvestingTools  
+    26. #DataDrivenInvesting  
+    27. #FinancialFreedom  
+
+  ### Motivation & Engagement:
+    28. #WinningMindset  
+    29. #StayDisciplined  
+    30. #TradeSmart  
+
+  Color Palette Reference:
+  - **Black:** `var(--color-black)` - #000000
+  - **Dark Grey:** `var(--color-dark-grey)` - #1E1E1E
+  - **Dark Green:** `var(--color-dark-green)` - #003300
+  - **Light Dark Green:** `var(--color-light-dark-green)` - #116611
+  - **Nav Hover Background:** `var(--color-nav-hover-bg)` - #228822
+  - **Dark Background:** `var(--color-dark-bg)` - #121212
+  - **Alternative Dark Background:** `var(--color-dark-bg-alt)` - #1A1A1A
+  - **Light Background:** `var(--color-light-bg)` - #f5f5f5
+  - **Base Text:** `var(--color-text-base)` - #EDEDED
+  - **Muted Text:** `var(--color-text-muted)` - #BBBBBB
+  - **Accent Color:** `var(--color-accent)` - Derived from `--color-light-dark-green`
+  - **Border Color:** `var(--color-border)` - #333333
+  - **Highlight Background:** `var(--color-highlight-bg)` - #f0f0f0
+  - **color-progress-border: #27ae60; Progress Border Color 
+  - **color-workflow-border: #e67e22;  Workflow Border Color 
+  - **color-next-steps-border: #8e44ad;  Next Steps Border Color 
+  - **color-accent-light: #16a085;  Light Accent Color 
+  - **color-accent-hover: #0e4e10;  Darker Shade for Hover States 
+
+  Future Compatibility:
+  - **Extendable Variables:** New variables can be added to `:root` to support additional components or themes.
+  - **Plugin-Ready:** Designed to integrate seamlessly with modular plugins, maintaining consistent styles across all additions.
+  - **Scalability:** Structure allows for growth, making it easy to add styles for new pages, features, or integrations for the Freeride Investor project.
+
+  Usage:
+  - This stylesheet can guide AI or developers to generate templates for blogs, financial tools, or landing pages while staying within this cohesive design language.
+
+
+/* -----------------------------
+   Base
+----------------------------- */
+@import url("base/_variables.css");
+@import url("base/_reset.css");
+@import url("base/_typography.css");
+@import url("base/_headings.css");
+@import url("base/_global.css");
+
+/* -----------------------------
+   Components
+----------------------------- */
+@import url("components/_buttons.css");
+@import url("components/_call-to-action.css");
+@import url("components/_cards.css");
+@import url("components/_collapsible.css");
+@import url("components/_discord-widget.css");
+@import url("components/_hero.css");
+@import url("components/_highlight-boxes.css");
+@import url("components/_navigation.css");
+@import url("components/_setup.css");
+@import url("components/_sections.css");
+@import url("components/_strategy-cards.css");
+@import url("components/_tables.css");
+@import url("components/_tbow-tactics.css");
+@import url("components/_team.css");
+@import url("components/_values.css");
+@import url("components/_watch.css");
+
+/* -----------------------------
+   Layout
+----------------------------- */
+@import url("layout/_containers.css");
+@import url("layout/_grid.css");
+@import url("layout/_header-footer.css");
+@import url("layout/_responsive.css");
+
+
+/* -----------------------------
+   Pages
+----------------------------- */
+@import url("pages/_about-us.css");
+@import url("pages/_latest-posts.css");
+@import url("pages/_subscription.css");
+@import url("pages/_fintech-dashboard.css");
+@import url("pages/_home-page.css");
+@import url("pages/_dev-blog.css");
+@import url("pages/_contact.css");
+@import url("pages/home-custom.css");
+@import url("pages/blog-home.css");
+@import url("pages/services.css");
+@import url("pages/_dashboard.css");
+@import url("pages/login.css");
+@import url("pages/dashboard.css");
+@import url("pages/stock-research.css");
+@import url("pages/elite-tools.css");
+@import url("pages/interactive-charts.css");
+@import url("pages/edit-profile.css");
+@import url("pages/pomodoro.css");
+@import url("pages/signup.css");
+
+/* -----------------------------
+   Utilities
+----------------------------- */
+@import url("posts/blog.css");
+@import url("utilities/_accessibility.css");
+@import url("utilities/_helpers.css");
+@import url("utilities/_utilities.css");
+@import url("posts/freeride-style.css");
+@import url("posts/_trading-journal-insights.css");
+@import url("posts/_my-trading-journey.css");
+@import url("posts/devlog.css");

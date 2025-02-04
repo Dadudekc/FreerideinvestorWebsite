@@ -1,0 +1,32 @@
+{
+  "post_title": "Automating Blog Posts with Templates",
+  "post_subtitle": "How to Set Up an Autoblogger",
+  "introduction": {
+    "title": "Introduction",
+    "content": "Welcome to this guide on setting up an autoblogger...\n\n**Bold Text** and *Italic Text*."
+  },
+  "sections": [
+    {
+      "title": "Choose a Templating Engine",
+      "content": "First, select a templating engine that suits your needs...\n\n- Jinja2\n- Handlebars.js\n- Twig"
+    },
+    {
+      "title": "Modify Your Template",
+      "content": "Next, update your HTML template with placeholders...\n\n```html\n<!-- Your HTML code -->\n```"
+    }
+  ],
+  "image": {
+    "title": "Visual Guide",
+    "url": "images/guide.png",
+    "alt": "A visual representation of the autoblogging process"
+  },
+  "conclusion": {
+    "title": "Conclusion",
+    "content": "By automating your blogging process, you save time..."
+  },
+  "cta": {
+    "title": "Stay Updated",
+    "content": "Subscribe for more tutorials and guides.",
+    "form_action": "/subscribe"
+  }
+}

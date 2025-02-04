@@ -1,0 +1,11 @@
+/* General Page Styling */
+.charts-section {
+    background-color: #121212; /* Dark background for the section */
+    color: #EDEDED; /* Light text for readability */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.charts-section .section-title {
+    font-size: 2.5rem;
+    color: #4cd137; /*

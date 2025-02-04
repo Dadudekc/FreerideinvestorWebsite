@@ -1,0 +1,80 @@
+2025-02-02 22:28:46,084:INFO:Running command: ollama run mistral:latest "Generate an engaging blog post title about automating blog posts with AI." --stdout
+2025-02-02 22:28:46,129:ERROR:Error running Ollama: Error: unknown flag: --stdout
+
+2025-02-02 22:28:46,130:INFO:Running command: ollama run mistral:latest "Generate a subtitle for the blog post titled 'Automating Blog Posts with AI'." --stdout
+2025-02-02 22:28:46,171:ERROR:Error running Ollama: Error: unknown flag: --stdout
+
+2025-02-02 22:28:46,172:INFO:Running command: ollama run mistral:latest "Write an introduction section for a blog post about automating blog posts using AI. The introduction should be engaging and set the stage for the rest of the post." --stdout
+2025-02-02 22:28:46,214:ERROR:Error running Ollama: Error: unknown flag: --stdout
+
+2025-02-02 22:28:46,215:INFO:Running command: ollama run mistral:latest "Section prompt" --stdout
+2025-02-02 22:28:46,256:ERROR:Error running Ollama: Error: unknown flag: --stdout
+
+2025-02-02 22:28:47,257:INFO:Running command: ollama run mistral:latest "Image prompt" --stdout
+2025-02-02 22:28:47,300:ERROR:Error running Ollama: Error: unknown flag: --stdout
+
+2025-02-02 22:28:47,301:INFO:Running command: ollama run mistral:latest "Write a conclusion for the blog post about automating blog posts using AI." --stdout
+2025-02-02 22:28:47,341:ERROR:Error running Ollama: Error: unknown flag: --stdout
+
+2025-02-02 22:28:47,343:ERROR:Error rendering template: template.html
+2025-02-02 22:28:47,356:INFO:Blog post generated successfully: path/to/output/directory\automating_blog_posts_with_ai_a_comprehensive_guide.html
+2025-02-02 22:42:32,946:INFO:Running command: ollama run mistral:latest "Generate an engaging blog post title about automating blog posts with AI." --stdout
+2025-02-02 22:42:32,989:ERROR:Error running Ollama: Error: unknown flag: --stdout
+
+2025-02-02 22:42:32,989:INFO:Running command: ollama run mistral:latest "Generate a subtitle for the blog post titled 'Automating Blog Posts with AI'." --stdout
+2025-02-02 22:42:33,032:ERROR:Error running Ollama: Error: unknown flag: --stdout
+
+2025-02-02 22:42:33,033:INFO:Running command: ollama run mistral:latest "Write an introduction section for a blog post about automating blog posts using AI. The introduction should be engaging and set the stage for the rest of the post." --stdout
+2025-02-02 22:42:33,075:ERROR:Error running Ollama: Error: unknown flag: --stdout
+
+2025-02-02 22:42:33,076:INFO:Running command: ollama run mistral:latest "Section prompt" --stdout
+2025-02-02 22:42:33,117:ERROR:Error running Ollama: Error: unknown flag: --stdout
+
+2025-02-02 22:42:34,118:INFO:Running command: ollama run mistral:latest "Image prompt" --stdout
+2025-02-02 22:42:34,159:ERROR:Error running Ollama: Error: unknown flag: --stdout
+
+2025-02-02 22:42:34,160:INFO:Running command: ollama run mistral:latest "Write a conclusion for the blog post about automating blog posts using AI." --stdout
+2025-02-02 22:42:34,201:ERROR:Error running Ollama: Error: unknown flag: --stdout
+
+2025-02-02 22:42:34,201:ERROR:Error rendering template: uilog_template.html
+2025-02-02 22:42:34,478:ERROR:Error saving output file: [WinError 123] The filename, directory name, or volume label syntax is incorrect: 'ui\x08log_posts'
+2025-02-02 22:43:06,645:INFO:Running command: ollama run mistral:latest "Generate an engaging blog post title about automating blog posts with AI." --stdout
+2025-02-02 22:43:06,688:ERROR:Error running Ollama: Error: unknown flag: --stdout
+
+2025-02-02 22:43:06,689:INFO:Running command: ollama run mistral:latest "Generate a subtitle for the blog post titled 'Automating Blog Posts with AI'." --stdout
+2025-02-02 22:43:06,730:ERROR:Error running Ollama: Error: unknown flag: --stdout
+
+2025-02-02 22:43:06,731:INFO:Running command: ollama run mistral:latest "Write an introduction section for a blog post about automating blog posts using AI. The introduction should be engaging and set the stage for the rest of the post." --stdout
+2025-02-02 22:43:06,772:ERROR:Error running Ollama: Error: unknown flag: --stdout
+
+2025-02-02 22:43:06,772:INFO:Running command: ollama run mistral:latest "Section prompt" --stdout
+2025-02-02 22:43:06,813:ERROR:Error running Ollama: Error: unknown flag: --stdout
+
+2025-02-02 22:43:07,814:INFO:Running command: ollama run mistral:latest "Image prompt" --stdout
+2025-02-02 22:43:07,856:ERROR:Error running Ollama: Error: unknown flag: --stdout
+
+2025-02-02 22:43:07,856:INFO:Running command: ollama run mistral:latest "Write a conclusion for the blog post about automating blog posts using AI." --stdout
+2025-02-02 22:43:07,898:ERROR:Error running Ollama: Error: unknown flag: --stdout
+
+2025-02-02 22:43:07,899:ERROR:Error rendering template: uilog_template.html
+2025-02-02 22:43:08,009:ERROR:Error saving output file: [WinError 123] The filename, directory name, or volume label syntax is incorrect: 'ui\x08log_posts'
+2025-02-02 22:43:25,660:INFO:Running command: ollama run mistral:latest "Generate an engaging blog post title about automating blog posts with AI." --stdout
+2025-02-02 22:43:25,702:ERROR:Error running Ollama: Error: unknown flag: --stdout
+
+2025-02-02 22:43:25,703:INFO:Running command: ollama run mistral:latest "Generate a subtitle for the blog post titled 'Automating Blog Posts with AI'." --stdout
+2025-02-02 22:43:25,745:ERROR:Error running Ollama: Error: unknown flag: --stdout
+
+2025-02-02 22:43:25,745:INFO:Running command: ollama run mistral:latest "Write an introduction section for a blog post about automating blog posts using AI. The introduction should be engaging and set the stage for the rest of the post." --stdout
+2025-02-02 22:43:25,788:ERROR:Error running Ollama: Error: unknown flag: --stdout
+
+2025-02-02 22:43:25,788:INFO:Running command: ollama run mistral:latest "Section prompt" --stdout
+2025-02-02 22:43:25,831:ERROR:Error running Ollama: Error: unknown flag: --stdout
+
+2025-02-02 22:43:26,832:INFO:Running command: ollama run mistral:latest "Image prompt" --stdout
+2025-02-02 22:43:26,874:ERROR:Error running Ollama: Error: unknown flag: --stdout
+
+2025-02-02 22:43:26,874:INFO:Running command: ollama run mistral:latest "Write a conclusion for the blog post about automating blog posts using AI." --stdout
+2025-02-02 22:43:26,915:ERROR:Error running Ollama: Error: unknown flag: --stdout
+
+2025-02-02 22:43:26,924:INFO:Template rendered successfully.
+2025-02-02 22:43:26,926:INFO:Blog post generated successfully: ui/blog_posts\automating_blog_posts_with_ai_a_comprehensive_guide.html

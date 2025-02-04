@@ -1,0 +1,45 @@
+/* --------------------------------------------------------------
+   Our Team
+-------------------------------------------------------------- */
+.our-team {
+    margin: var(--spacing-md) 0;
+  }
+  
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+  }
+  
+  .team-member {
+    background: var(--color-dark-grey);
+    padding: var(--spacing-sm);
+    border-radius: 5px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .team-member:hover,
+  .team-member:focus-within {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .member-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    max-width: 150px;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .team-member h3 {
+    color: var(--color-text-base);
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .team-member p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+  }
+  

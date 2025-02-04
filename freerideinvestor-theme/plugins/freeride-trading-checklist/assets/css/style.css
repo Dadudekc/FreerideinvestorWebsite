@@ -1,0 +1,317 @@
+/* ==============================================
+   Variables
+============================================== */
+:root {
+    --color-dark-bg: #121212;
+    --color-dark-bg-alt: #1A1A1A;
+    --color-text-base: #EDEDED;
+    --color-text-muted: #BBBBBB;
+    --color-light-dark-green: #116611;
+    --color-border: #333333;
+    --color-success: #28a745;
+    --color-danger: #dc3545;
+    --color-secondary: #6c757d;
+    --transition-speed: 0.3s;
+}
+
+/* ==============================================
+   General Styles
+============================================== */
+body {
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-base);
+    font-family: Arial, sans-serif;
+}
+
+a {
+    color: var(--color-light-dark-green);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ==============================================
+   Section Styles
+============================================== */
+.frtc-section {
+    background-color: var(--color-dark-bg-alt);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.frtc-section h2.section-title {
+    color: var(--color-light-dark-green);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 10px;
+    font-size: 1.8em;
+}
+
+/* ==============================================
+   Form Styles
+============================================== */
+.frtc-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.frtc-section form p {
+    margin-bottom: 15px;
+}
+
+.frtc-section form label {
+    color: var(--color-text-base);
+    margin-bottom: 5px;
+    display: block;
+    font-weight: bold;
+}
+
+.frtc-section form input[type="text"],
+.frtc-section form input[type="email"],
+.frtc-section form input[type="password"] {
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-base);
+    border: 1px solid var(--color-border);
+    padding: 10px;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color var(--transition-speed);
+}
+
+.frtc-section form input[type="text"]:focus,
+.frtc-section form input[type="email"]:focus,
+.frtc-section form input[type="password"]:focus {
+    border-color: var(--color-light-dark-green);
+    outline: none;
+}
+
+.frtc-section form button {
+    background-color: var(--color-light-dark-green);
+    border: 1px solid var(--color-light-dark-green);
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color var(--transition-speed), border-color var(--transition-speed);
+}
+
+.frtc-section form button:hover {
+    background-color: #0F5F0F;
+    border-color: #0F5F0F;
+}
+
+.frtc-section .g-recaptcha {
+    margin-bottom: 15px;
+}
+
+/* ==============================================
+   Social Login Buttons
+============================================== */
+.frtc-social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.frtc-social-buttons .nextend-social-login-button {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 20px !important;
+    border-radius: 4px !important;
+    text-decoration: none !important;
+    color: #fff !important;
+    margin: 5px 0;
+    font-size: 1em;
+    transition: opacity var(--transition-speed);
+}
+
+.frtc-social-buttons .nextend-social-login-provider-google {
+    background-color: #DB4437 !important;
+}
+
+.frtc-social-buttons .nextend-social-login-provider-facebook {
+    background-color: #3B5998 !important;
+}
+
+.frtc-social-buttons .nextend-social-login-button:hover {
+    opacity: 0.9;
+}
+
+/* ==============================================
+   Dashboard Styles
+============================================== */
+#frtc-dashboard .frtc-dashboard-section {
+    margin-bottom: 30px;
+}
+
+#frtc-dashboard .frtc-dashboard-section h3 {
+    color: var(--color-light-dark-green);
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+#frtc-dashboard .frtc-dashboard-section p {
+    color: var(--color-text-base);
+    line-height: 1.6;
+}
+
+#frtc-dashboard .frtc-dashboard-section a.btn {
+    margin-top: 10px;
+    display: inline-block;
+}
+
+#frtc-dashboard .frtc-dashboard-section a.btn.btn-secondary {
+    background-color: var(--color-secondary);
+    border: 1px solid var(--color-secondary);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color var(--transition-speed), border-color var(--transition-speed);
+}
+
+#frtc-dashboard .frtc-dashboard-section a.btn.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+/* ==============================================
+   Checklist Styles
+============================================== */
+.frtc-checklist {
+    background-color: var(--color-dark-bg-alt);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.frtc-checklist h2.section-title {
+    color: var(--color-light-dark-green);
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.frtc-checklist .input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.frtc-checklist .input-group input {
+    flex: 1;
+}
+
+.frtc-checklist .input-group button {
+    background-color: var(--color-light-dark-green);
+    border: 1px solid var(--color-light-dark-green);
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), border-color var(--transition-speed);
+}
+
+.frtc-checklist .input-group button:hover {
+    background-color: #0F5F0F;
+    border-color: #0F5F0F;
+}
+
+#taskList .list-group-item {
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-base);
+    border: 1px solid var(--color-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+#taskList .list-group-item.completed {
+    text-decoration: line-through;
+    color: var(--color-text-muted);
+    background-color: var(--color-dark-bg);
+}
+
+#taskList .list-group-item button {
+    background-color: var(--color-danger);
+    border: 1px solid var(--color-danger);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), border-color var(--transition-speed);
+}
+
+#taskList .list-group-item button:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+.frtc-checklist .progress {
+    height: 25px;
+    background-color: var(--color-border);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.frtc-checklist .progress-bar {
+    background-color: var(--color-light-dark-green);
+    transition: width var(--transition-speed);
+    height: 100%;
+    text-align: center;
+    line-height: 25px;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* ==============================================
+   Message Styles
+============================================== */
+.text-success {
+    color: var(--color-success);
+    font-weight: bold;
+}
+
+.text-danger {
+    color: var(--color-danger);
+    font-weight: bold;
+}
+
+/* ==============================================
+   Responsive Design
+============================================== */
+@media (max-width: 768px) {
+    .frtc-section {
+        padding: 15px;
+    }
+
+    .frtc-social-buttons {
+        flex-direction: column;
+    }
+
+    .frtc-social-buttons .nextend-social-login-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    #taskList .list-group-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #taskList .list-group-item button {
+        margin-top: 10px;
+    }
+}

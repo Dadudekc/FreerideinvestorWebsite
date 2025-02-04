@@ -1,0 +1,29 @@
+/* freeride-smart-dashboard.css */
+.freeride-smart-dashboard {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.freeride-smart-dashboard h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+.dashboard-section {
+    margin-bottom: 20px;
+}
+.dashboard-section h3 {
+    margin-bottom: 10px;
+    color: #34495e;
+}
+.dashboard-section p {
+    font-size: 1.2em;
+    color: #333;
+}
+canvas {
+    max-width: 100%;
+    height: auto;
+}

@@ -1,0 +1,61 @@
+/* Site Header */
+.site-header {
+  background: var(--color-dark-grey);
+  padding: var(--spacing-sm);
+}
+
+/* Footer */
+.site-footer {
+  background: var(--color-dark-grey);
+  padding: var(--spacing-sm);
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.site-footer p {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+.site-header {
+  background: var(--color-dark-grey);
+  padding: var(--spacing-sm);
+}
+
+.site-footer {
+  background: var(--color-dark-grey);
+  padding: var(--spacing-sm);
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.site-footer p {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+/* Global Spacing Fix for Sections and Footer */
+.section:last-of-type {
+    margin-bottom: 40px; /* Ensure spacing at the bottom of the last section */
+}
+
+.site-main {
+    padding-bottom: 20px; /* Add a global padding to main content if needed */
+}
+
+.footer {
+    margin-top: 0; /* Remove unnecessary margin */
+    padding-top: 20px; /* Add padding to footer */
+}

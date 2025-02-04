@@ -1,0 +1,299 @@
+/* Dashboard Hero Section */
+.st-dashboard-hero {
+  text-align: center;
+  color: #EDEDED; /* Light text for dark backgrounds */
+  background: linear-gradient(135deg, #121212, #1A1A1A); /* Dark-themed gradient */
+  padding: 60px 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.st-hero-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #EDEDED; /* Light text */
+}
+
+.st-hero-description {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #BBBBBB; /* Muted text for descriptions */
+}
+
+.st-hero-actions .btn {
+  margin: 0 10px;
+  background-color: #116611; /* Dark green accent */
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.st-hero-actions .btn:hover {
+  background-color: #22AA22; /* Lighter green hover effect */
+}
+
+/* Dashboard Tools Section */
+.st-dashboard-tools {
+  padding: 60px 0;
+  background-color: #121212; /* Dark background */
+}
+
+.st-section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  color: #EDEDED; /* Light text for headings */
+}
+
+.st-tools-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.st-tool-item {
+  background: #1A1A1A; /* Slightly lighter than main background */
+  padding: 20px;
+  border-radius: 8px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8); /* Darker shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.st-tool-item:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 1);
+}
+
+.st-tool-item img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+.st-tool-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #EDEDED; /* Light text */
+}
+
+.st-tool-item p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #BBBBBB; /* Muted text */
+}
+
+.st-tool-item .btn-link {
+  color: #116611; /* Dark green link */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.st-tool-item .btn-link:hover {
+  color: #22AA22; /* Brighter green hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .st-tools-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .st-tool-item {
+    width: 90%;
+  }
+}
+
+/* Additional Styles for Dashboard Content */
+.st-dashboard-content {
+  padding: 40px 0;
+  background-color: #121212; /* Matches the dark theme */
+}
+
+.st-dashboard-widgets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.st-widget {
+  background: #1A1A1A; /* Slightly lighter dark background */
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8); /* Consistent with tool items */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.st-widget:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 1);
+}
+
+.st-widget h3 {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #EDEDED; /* Light text */
+}
+
+.st-widget h3 i {
+  margin-right: 10px;
+  color: #116611; /* Dark green icon */
+}
+
+.st-quick-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.st-quick-links li {
+  margin-bottom: 10px;
+}
+
+.st-quick-links a {
+  color: #116611; /* Dark green links */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.st-quick-links a:hover {
+  color: #22AA22; /* Brighter green hover */
+}
+
+/* Call-to-Action Button */
+.st-cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #116611; /* Dark green background */
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.st-cta-button:hover {
+  background-color: #22AA22; /* Brighter green hover */
+  transform: translateY(-3px); /* Slight lift on hover */
+}
+/* Strategy Checklist Section */
+.st-dashboard-widgets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.st-widget {
+  background: #1A1A1A; /* Slightly lighter dark background */
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px; /* Increased width for larger widgets */
+  max-width: 100%; /* Ensures it stays responsive */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8); /* Darker shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.st-widget:first-child {
+  flex-grow: 1; /* Allow it to take more space if available */
+  max-width: 600px; /* Make the Daily Checklist even wider */
+}
+
+.st-widget:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 1);
+}
+
+.st-widget h3 {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #EDEDED; /* Light text */
+}
+
+.st-widget h3 i {
+  margin-right: 10px;
+  color: #116611; /* Dark green icon */
+}
+
+.st-widget input,
+.st-widget button {
+  font-size: 1rem;
+}
+
+/* Task Input and Button Alignment */
+.st-widget input {
+  width: calc(100% - 100px); /* Input takes most of the width */
+  margin-right: 10px;
+  padding: 10px;
+  background: #121212; /* Dark background for input field */
+  border: 1px solid #333333; /* Subtle border for structure */
+  color: #EDEDED; /* Light text */
+  border-radius: 5px;
+}
+
+.st-widget button {
+  padding: 10px 20px;
+  background-color: #116611; /* Green button */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.st-widget button:hover {
+  background-color: #22AA22; /* Brighter green hover */
+}
+/* Tool Card Buttons */
+.st-tool-item .btn-link {
+  color: #000000; /* Black text for buttons */
+  background-color: #116611; /* Dark green background */
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.st-tool-item .btn-link:hover {
+  background-color: #22AA22; /* Brighter green hover effect */
+  color: #000000; /* Ensure text stays black on hover */
+}
+
+/* Centered Icon Styling */
+.st-tool-item img {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px; /* Center icon with margin below */
+  display: block; /* Ensures the icon centers properly */
+}
+
+.st-tool-item h3 {
+  font-size: 1.5rem;
+  margin: 10px 0 15px; /* Adjust spacing for balance */
+  color: #EDEDED; /* Light text */
+  text-align: center; /* Center the title */
+}
+
+.st-tool-item p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #BBBBBB; /* Muted text for descriptions */
+  text-align: center; /* Center the text for consistency */
+}

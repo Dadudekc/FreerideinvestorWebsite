@@ -1,0 +1,58 @@
+
+/*--------------------------------------------------------------
+  Global Styles
+--------------------------------------------------------------*/
+
+body {
+    font-family: var(--font-primary, 'Roboto', sans-serif); /* Default font */
+    color: var(--color-text-base, #EDEDED); /* Base text color */
+    line-height: 1.6; /* Comfortable line spacing */
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-dark-bg, #121212); /* Dark background */
+}
+
+a {
+    color: var(--color-light-dark-green, #116611); /* Accent link color */
+    text-decoration: none;
+    transition: color var(--transition-speed, 0.3s);
+}
+
+a:hover {
+    color: #33ff99; /* Slightly lighter green for hover */
+    text-decoration: underline; /* Optional hover feedback */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0; /* Comfortable padding */
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 1rem;
+    font-weight: bold;
+    color: var(--color-text-base);
+    line-height: 1.2; /* Compact spacing for headings */
+}
+
+/* Paragraphs */
+p {
+    margin: 0 0 1rem;
+    color: var(--color-text-muted, #BBBBBB);
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.mt-md {
+    margin-top: 2rem;
+}
+
+.mb-md {
+    margin-bottom: 2rem;
+}

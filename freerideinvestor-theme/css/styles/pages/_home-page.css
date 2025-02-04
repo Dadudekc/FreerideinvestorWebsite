@@ -1,0 +1,811 @@
+:root {
+  --font-primary: 'Roboto', sans-serif;
+}
+
+/*--------------------------------------------------------------
+  Hero Section (Updated to Match Welcome Section)
+--------------------------------------------------------------*/
+.hero {
+  background-color: linear-gradient(135deg, #28b463, #27ae60); /* Darker background for a more sleek, modern feel */
+  color: #f0f0f0; /* Light text for contrast */
+  text-align: center;
+  padding: 100px 40px; /* Increased padding for spacious feel */
+  background-image: url('../images/hero-bg.jpg'); /* Optional: Add a background image */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-radius: 18px; /* Rounded corners */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); /* Strong shadow for depth */
+  max-width: 1200px; /* Limit max width */
+  margin: 80px auto; /* Centered section */
+  box-sizing: border-box;
+}
+
+/* Hero Heading */
+.hero h1 {
+  font-size: 3.5rem; /* Larger, bold heading */
+  margin-bottom: 30px;
+  color: #f0f0f0; /* White for readability */
+  font-weight: 700;
+  text-transform: uppercase; /* Bold uppercase style */
+  letter-spacing: 2px; /* Adds spacing for clarity */
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Soft glow effect */
+}
+
+/* Hero Paragraph */
+.hero p {
+  font-size: 1.4rem; /* Larger text for readability */
+  line-height: 1.8; /* Improved line spacing */
+  color: #bbbbbb; /* Soft muted color for contrast */
+  margin-bottom: 40px; /* Space between paragraph and button */
+}
+
+/* Call-to-Action Button */
+.hero .cta-button {
+  background-color: #2ecc71; /* Accent green color for the button */
+  color: #ffffff; /* White text for clarity */
+  padding: 14px 36px; /* Button padding for balanced size */
+  font-size: 1.3rem; /* Font size for the button */
+  border-radius: 12px; /* Rounded edges */
+  text-decoration: none;
+  font-weight: 600; /* Slightly bold for emphasis */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 30px; /* Added space between button and text */
+}
+
+/* Button Hover Effect */
+.hero .cta-button:hover,
+.hero .cta-button:focus {
+  background-color: #27ae60; /* Darker green for hover */
+  transform: scale(1.05); /* Button grows on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
+}
+
+/* Decorative Glow */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2); /* Dark overlay for contrast */
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 18px; /* Rounded corners to match */
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .hero {
+    padding: 80px 20px; /* Reduced padding on smaller screens */
+  }
+
+  .hero h1 {
+    font-size: 2.5rem; /* Adjusted font size for better mobile readability */
+  }
+
+  .hero p {
+    font-size: 1.3rem; /* Smaller text size for mobile */
+  }
+
+  .hero .cta-button {
+    font-size: 1rem; /* Adjust button font size */
+    padding: 12px 24px; /* Smaller padding for mobile */
+    width: 100%; /* Full width button on mobile */
+  }
+}
+
+/* --------------------------------------------------------------
+   General Reset and Base Styles
+-------------------------------------------------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-primary);
+  background-color: var(--color-dark-bg);
+  color: var(--color-text-base);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+
+
+/* --------------------------------------------------------------
+   Services Section
+-------------------------------------------------------------- */
+.services {
+  margin: 60px 0;
+  text-align: center;
+  padding: var(--spacing-md);
+  background: var(--color-dark-bg-alt);
+  border-radius: 12px;
+  box-shadow: var(--box-shadow-light);
+}
+
+.services h2 {
+  font-size: 2.5rem;
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-md);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+  padding: 0;
+}
+
+.service-item {
+  background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: var(--box-shadow-light);
+  padding: var(--spacing-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.service-item h3 {
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.4;
+}
+
+.service-item p {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-sm);
+}
+
+.service-item .read-more {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--color-accent);
+  color: var(--color-black);
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+  text-decoration: none;
+}
+
+.service-item .read-more:hover {
+  background: var(--color-light-dark-green);
+  transform: translateY(-3px);
+}
+/* --------------------------------------------------------------
+   Welcome Section
+-------------------------------------------------------------- */
+
+/* Section Background */
+.welcome-section {
+  background-color: linear-gradient(145deg, #121212, #1a1a1a); /* Slightly lighter black for the backdrop */
+  padding: 70px 0px; /* Spacious padding for an expansive look */
+  text-align: center;
+  border-radius: 20px; /* Rounded corners for a modern aesthetic */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); /* Deeper shadow for more visual depth */
+  max-width: 1100px; /* Wider section for large screens */
+  margin: 80px auto; /* Centered section with generous margin */
+  position: relative;
+  overflow: hidden; /* Prevents overflow for clean edges */
+}
+
+/* Decorative Background Glow */
+.welcome-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(46, 204, 113, 0.15), transparent); /* Soft green glow */
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Heading Styling */
+.welcome-section h2 {
+  font-size: 3rem; /* Large, bold heading */
+  font-weight: 700;
+  color: #2ecc71; /* Accent green for emphasis */
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7); /* Soft text glow effect */
+}
+
+/* Paragraph Styling */
+.welcome-section p {
+  font-size: 1.6rem; /* Larger text for readability */
+  line-height: 2; /* Proper line spacing */
+  color: #f0f0f0; /* Light text for high contrast */
+  margin-bottom: 50px; /* Adequate space below text */
+  position: relative;
+  z-index: 1;
+}
+
+/* Call-to-Action Button */
+.welcome-section .cta-button {
+  display: inline-block;
+  padding: 16px 36px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ffffff;
+  background: linear-gradient(145deg, #27ae60, #2ecc71); /* Green gradient for the button */
+  border: none;
+  border-radius: 12px; /* Rounded button corners */
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Button shadow for a lifted effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+/* Button Hover Effect */
+.welcome-section .cta-button:hover {
+  transform: translateY(-5px) scale(1.05); /* Slightly lifts and enlarges on hover */
+  background: linear-gradient(145deg, #2ecc71, #27ae60); /* Hover effect for the gradient */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6); /* Enhanced shadow on hover */
+}
+
+/* Decorative Overlay Effect */
+.welcome-section::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(145deg, rgba(46, 204, 113, 0.1), transparent);
+  border-radius: 20px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .welcome-section {
+    padding: 60px 20px; /* Reduced padding on smaller screens */
+  }
+
+  .welcome-section h2 {
+    font-size: 2.5rem; /* Adjusted heading size for mobile */
+  }
+
+  .welcome-section p {
+    font-size: 1.4rem; /* Slightly smaller text on mobile */
+  }
+
+  .welcome-section .cta-button {
+    font-size: 1.1rem; /* Adjusted button size */
+    padding: 16px 28px; /* Reduced padding for mobile */
+    width: 100%; /* Full width button on mobile */
+  }
+}
+
+
+
+/* --------------------------------------------------------------
+   Tbow Tactics Section
+-------------------------------------------------------------- */
+/* Tbow Tactics Section */
+.tbow-tactics {
+  margin: 80px auto;
+  padding: 80px 40px;
+  background: linear-gradient(145deg, #121212, #1a1a1a); /* Rich dark background */
+  border-radius: 18px; /* Smooth, modern rounded corners */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6); /* Enhanced shadow for depth */
+  max-width: 1000px; /* Expansive for large screens */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Heading Styling */
+.tbow-tactics h2 {
+  font-size: 3rem; /* Bold and impactful heading */
+  font-weight: 700;
+  color: #2ecc71; /* Green accent to match your theme */
+  margin-bottom: 40px; /* Extra space for clarity */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); /* Adds depth with subtle glow */
+}
+
+/* Paragraph Styling */
+.tbow-tactics p {
+  font-size: 1.6rem; /* Comfortable, larger text */
+  line-height: 2;
+  color: #f0f0f0; /* Bright text for readability */
+  margin-bottom: 60px; /* Generous space before the button */
+  position: relative;
+  z-index: 1;
+}
+
+/* Call-to-Action Button */
+.tbow-tactics .cta-button {
+  display: inline-block;
+  padding: 18px 40px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ffffff;
+  background: linear-gradient(145deg, #27ae60, #2ecc71); /* Green gradient for buttons */
+  border: none;
+  border-radius: 12px; /* Rounded button corners */
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Larger shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+/* Button Hover Effect */
+.tbow-tactics .cta-button:hover {
+  transform: translateY(-5px) scale(1.05); /* Lifting and scaling effect */
+  background: linear-gradient(145deg, #2ecc71, #27ae60); /* Reverse gradient on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7); /* Enhanced shadow effect */
+}
+
+/* Decorative Animated Ring */
+.tbow-tactics::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(46, 204, 113, 0.15), transparent);
+  border-radius: 50%;
+  bottom: -100px;
+  right: -100px;
+  z-index: 0;
+  animation: pulse 6s infinite;
+  pointer-events: none; /* Non-interactive ring */
+}
+
+/* Pulse Animation for Decorative Ring */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .tbow-tactics {
+    padding: 50px 20px;
+  }
+
+  .tbow-tactics h2 {
+    font-size: 2.5rem; /* Adjust heading size for mobile */
+  }
+
+  .tbow-tactics p {
+    font-size: 1.4rem; /* Adjust paragraph text size for mobile */
+  }
+
+  .tbow-tactics .cta-button {
+    font-size: 1.1rem; /* Adjust button size for mobile */
+    padding: 16px 28px;
+    width: 100%; /* Full width for the button on mobile */
+  }
+}
+
+/* --------------------------------------------------------------
+   eBook Showcase Section
+-------------------------------------------------------------- */
+/* eBook Showcase Section */
+.ebook-showcase {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; /* Increased gap for spacing between items */
+  align-items: center;
+  background: #1a1a1a; /* Dark background for a sleek look */
+  padding: 60px 30px; /* More spacious padding for a clean, modern look */
+  border-radius: 18px; /* More rounded corners for elegance */
+  margin-bottom: 60px; /* Increased bottom margin for spacing */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+}
+
+/* Image Styling */
+.ebook-image img {
+  max-width: 100%;
+  border-radius: 12px; /* More rounded corners on the image */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Lighter shadow for a polished look */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+/* Image Hover Effect */
+.ebook-image img:hover {
+  transform: scale(1.05); /* Slight zoom effect for engagement */
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4); /* Enhanced hover shadow */
+}
+
+/* eBook Details Section */
+.ebook-details {
+  flex: 1;
+  min-width: 300px; /* Minimum width for a balanced layout */
+  color: #e0e0e0; /* Light text for contrast */
+}
+
+/* eBook Title Styling */
+.ebook-details h3 {
+  font-size: 2rem; /* Larger font size for the title */
+  color: #2ecc71; /* Green accent color for the title */
+  margin-bottom: 20px; /* Space below the title */
+  font-weight: 700; /* Bold weight for emphasis */
+}
+
+/* eBook Description Styling */
+.ebook-details p {
+  font-size: 1.1rem; /* Larger text for better readability */
+  color: #bbbbbb; /* Muted text for clarity */
+  margin-bottom: 20px; /* Space below the description */
+  line-height: 1.8; /* Increased line height for readability */
+}
+
+/* Urgency Styling */
+.ebook-details .ebook-urgency {
+  font-weight: bold;
+  color: #2ecc71; /* Green accent color for urgency */
+  margin-bottom: 30px; /* Space below urgency text */
+}
+
+/* Call-to-Action Button Styling */
+.ebook-details .cta-button {
+  display: inline-block;
+  padding: 14px 28px;
+  background: #2ecc71; /* Green background for the button */
+  color: #ffffff; /* White text for contrast */
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 12px; /* Rounded button edges */
+  text-decoration: none;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effects */
+}
+
+/* Button Hover Effect */
+.ebook-details .cta-button:hover {
+  background: #27ae60; /* Darker green on hover for effect */
+  transform: translateY(-4px); /* Slight upward movement for engagement */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+}
+
+/* --------------------------------------------------------------
+   Latest Posts Section
+-------------------------------------------------------------- */
+.latest-posts {
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background: var(--color-dark-bg-alt);
+  border-radius: 12px;
+  box-shadow: var(--box-shadow-light);
+}
+
+.latest-posts h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-md);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+  padding: 0;
+}
+
+.post-item {
+  background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: var(--box-shadow-light);
+  padding: var(--spacing-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.post-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.post-item h3 {
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.4;
+}
+
+.post-item p {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-sm);
+}
+
+.post-item .read-more {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--color-accent);
+  color: var(--color-black);
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+  text-decoration: none;
+}
+
+.post-item .read-more:hover {
+  background: var(--color-light-dark-green);
+  transform: translateY(-3px);
+}
+
+/* --------------------------------------------------------------
+   Subscription Section
+-------------------------------------------------------------- */
+.subscription-section {
+  text-align: center;
+  padding: 40px 20px;
+  background: var(--color-dark-bg-alt);
+  border-radius: 12px;
+}
+
+.subscription-section h2 {
+  font-size: 2.5rem;
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-md);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.subscription-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.subscription-form input[type="email"] {
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-dark-grey);
+  color: var(--color-text-base);
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+
+.subscription-form button {
+  padding: 12px 24px;
+  background: var(--color-accent);
+  color: var(--color-black);
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.subscription-form button:hover {
+  background: var(--color-light-green);
+  transform: translateY(-3px);
+}
+
+/* --------------------------------------------------------------
+   Header Section (Green Background)
+-------------------------------------------------------------- */
+.header {
+  background-color: green; /* Applied green background to the header */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .subscription-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .subscription-form input[type="email"],
+  .subscription-form button {
+    width: 100%;
+  }
+}
+.spaced-links a {
+  margin-right: 20px; /* Adds space between the links */
+  text-decoration: none; /* Optional: Removes underlines */
+}
+
+.spaced-links a:last-child {
+  margin-right: 0; /* Removes spacing after the last link */
+}
+.subscription-section {
+  text-align: center;
+  padding: 40px 20px;
+  background: var(--color-dark-bg-alt);
+  border-radius: 12px;
+  margin-bottom: 40px; /* Add this for the gap */
+}
+
+
+/* eBook Showcase Section */
+.ebook-showcase {
+  padding: 60px 30px;
+  background: linear-gradient(145deg, var(--color-background-alt), var(--color-dark-bg-alt));
+  border-radius: 12px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+}
+
+.ebook-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.ebook-image img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ebook-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.ebook-details {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  text-align: left;
+  position: relative;
+}
+
+.ebook-details h3 {
+  font-size: 2rem;
+  color: var(--color-accent);
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.ebook-details p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: var(--color-text-muted);
+}
+
+.ebook-urgency {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--color-accent);
+  margin-bottom: 30px;
+}
+
+.ebook-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.ebook-form input[type="email"] {
+  flex: 1 1 70%;
+  padding: 14px 16px;
+  font-size: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  width: 100%;
+  background-color: var(--color-background);
+  color: var(--color-text-base);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ebook-form input[type="email"]:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+.form-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.form-footer label {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-background);
+  background: linear-gradient(145deg, var(--color-accent), var(--color-accent-hover));
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(145deg, var(--color-accent-hover), var(--color-accent));
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+

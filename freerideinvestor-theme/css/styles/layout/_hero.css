@@ -1,0 +1,26 @@
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: var(--spacing-lg) var(--spacing-sm);
+  background: linear-gradient(135deg, var(--color-dark-green), var(--color-light-dark-green));
+  color: var(--color-text-base);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin: var(--spacing-md) 0;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-base);
+}
+
+.hero p {
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-muted);
+  font-size: 1.2rem;
+}

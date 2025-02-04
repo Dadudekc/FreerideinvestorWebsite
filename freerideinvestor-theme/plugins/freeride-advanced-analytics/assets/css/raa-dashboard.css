@@ -1,0 +1,44 @@
+.raa-premium-dashboard {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.raa-section {
+    margin-bottom: 40px;
+}
+
+.raa-section h3 {
+    margin-bottom: 15px;
+}
+
+.raa-section form {
+    margin-bottom: 20px;
+}
+
+.raa-section input[type="text"],
+.raa-section select {
+    width: 200px;
+    padding: 8px;
+    margin-right: 10px;
+}
+
+.raa-section button {
+    padding: 8px 16px;
+}
+
+#raa-predictive-result,
+#raa-strategy-result,
+#raa-risk-result {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}

@@ -1,0 +1,1198 @@
+/* -------------------------------
+   1. THEME COLORS & VARIABLES
+------------------------------- */
+:root {
+    --color-dark-bg:       #121212;
+    --color-dark-bg-alt:   #1A1A1A;
+    --color-text-base:     #EDEDED;
+    --color-text-muted:    #BBBBBB;
+    --color-border:        #333333;
+    --color-brand-primary: #116611; /* Branding Green */
+    --color-brand-accent:  #22AA22; /* Brighter Green Accent */
+    --color-badge:         #FFD700; /* Gold for badges */
+}
+
+/* -------------------------------
+   2. BASE PAGE STYLING
+------------------------------- */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-base);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-image: radial-gradient(circle at top center, var(--color-dark-bg-alt), var(--color-dark-bg));
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
+    padding: 0;
+}
+
+/* -------------------------------
+   3. POMODORO TIMER & ANIMATIONS
+------------------------------- */
+/* Removed the green glowing circle (#freeride-orb) */
+
+/* Inner progress ring (Pomodoro progress) */
+#progress-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: conic-gradient(var(--color-brand-accent) 0deg, transparent 0deg);
+    box-shadow: 0 0 6px var(--color-brand-accent);
+    transition: background 0.6s linear;
+}
+
+/* Focus streak ring */
+#focus-streak {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 230px;
+    height: 230px;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    background: conic-gradient(var(--color-brand-primary) 0deg, transparent 0deg);
+    animation: streak-progress 1.5s linear forwards;
+}
+@keyframes streak-progress {
+    from {
+        background: conic-gradient(transparent 0%, transparent 100%);
+    }
+    to {
+        background: conic-gradient(var(--color-brand-primary) 100%, transparent 0%);
+    }
+}
+
+#session-goals {
+    position: absolute;
+    bottom: -25px;
+    width: 100%;
+    text-align: center;
+    color: var(--color-brand-accent);
+    text-shadow: 0 0 4px var(--color-brand-accent);
+    font-size: 0.9rem;
+}
+
+/* -------------------------------
+   4. TIMER & CONTROL BUTTONS
+------------------------------- */
+#timer {
+    font-size: 3rem;
+    margin: 20px 0;
+    color: var(--color-brand-accent);
+    text-shadow: 0 0 6px var(--color-brand-accent);
+    transition: color 0.6s, text-shadow 0.6s;
+}
+.time-warning {
+    color: #BB9900;
+    text-shadow: 0 0 8px #BB9900;
+}
+.time-critical {
+    color: #BB2222;
+    text-shadow: 0 0 10px #BB2222;
+}
+
+.button {
+    background-color: var(--color-brand-primary);
+    color: var(--color-text-base);
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 0 8px var(--color-brand-primary);
+}
+.button:hover {
+    background-color: var(--color-brand-accent);
+    transform: scale(1.05);
+}
+
+/* -------------------------------
+   5. TRELLO-LIKE TASKS SECTION
+------------------------------- */
+#task-list {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1100px;
+    text-align: left;
+    background-color: var(--color-dark-bg-alt);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--color-border);
+}
+
+#task-list h2 {
+    margin-top: 0;
+    color: var(--color-brand-accent);
+    text-shadow: 0 0 4px var(--color-brand-accent);
+}
+
+#task-lists {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.list {
+    background-color: var(--color-dark-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 10px;
+    width: 30%;
+    min-width: 240px;
+}
+.list h3 {
+    margin-top: 0;
+    text-align: center;
+    color: var(--color-brand-primary);
+}
+.tasks {
+    min-height: 50px;
+}
+
+/* Each Task item */
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-dark-bg-alt);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--color-border);
+    cursor: move; /* Drag handle */
+}
+.task span {
+    margin-right: 5px;
+}
+.task .label {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    margin-right: 10px;
+    color: #fff;
+}
+
+.high-priority   { background-color: #BB2222; }
+.medium-priority { background-color: #BB9900; }
+.low-priority    { background-color: #229922; }
+
+.task button {
+    background-color: #BB2222;
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.task button:hover {
+    background-color: #881111;
+}
+
+/* -------------------------------
+   6. TASK INPUT & JSON UPLOAD
+------------------------------- */
+#task-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+#taskInput {
+    width: 40%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-base);
+    box-shadow: 0 0 8px var(--color-brand-accent);
+}
+#taskInput:focus {
+    outline: none;
+    box-shadow: 0 0 12px var(--color-brand-primary);
+}
+
+#prioritySelect, #addTaskBtn {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: none;
+}
+#prioritySelect {
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-base);
+    box-shadow: 0 0 6px var(--color-brand-accent);
+}
+#addTaskBtn {
+    background-color: #116611;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 8px #116611;
+}
+#addTaskBtn:hover {
+    background-color: #22AA22;
+}
+
+#json-upload-controls {
+    margin-top: 1rem;
+    text-align: center;
+}
+#jsonFileInput {
+    color: var(--color-text-base);
+    background-color: var(--color-dark-bg);
+    border: none;
+    padding: 3px;
+}
+
+/* =========== NEW: JSON TEMPLATE PREVIEW ========== */
+#json-template-controls {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+#json-template-controls h4 {
+    margin-bottom: 0.5rem;
+    color: var(--color-brand-accent);
+}
+#json-template-preview {
+    background-color: var(--color-dark-bg-alt);
+    color: var(--color-text-muted);
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid var(--color-border);
+    font-family: monospace;
+    text-align: left;
+    max-width: 600px;
+    margin: 10px auto;
+    overflow-x: auto;
+    white-space: pre-wrap;
+}
+#downloadJSONTemplate {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: var(--color-brand-primary);
+    color: var(--color-text-base);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 0 8px var(--color-brand-primary);
+}
+#downloadJSONTemplate:hover {
+    background-color: var(--color-brand-accent);
+}
+
+/* -------------------------------
+   7. ANALYTICS PANEL & BUTTON
+------------------------------- */
+#analytics-panel {
+    position: fixed;
+    right: 0;
+    top: 110px;
+    width: 380px;
+    max-width: 90%;
+    background-color: var(--color-dark-bg-alt);
+    color: var(--color-text-base);
+    padding: 20px;
+    border-left: 2px solid var(--color-border);
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    overflow-y: auto;
+    max-height: 80vh;
+}
+#analytics-panel.collapsed {
+    transform: translateX(100%);
+}
+#analytics-panel.expanded {
+    transform: translateX(0);
+}
+
+#toggle-analytics {
+    position: fixed;
+    top: 160px;
+    right: 0;
+    transform: translateX(100%);
+    z-index: 1001;
+}
+
+/* -------------------------------
+   8. TIP / NOTIFICATIONS
+------------------------------- */
+.freeride-tip {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: var(--color-dark-bg-alt);
+    color: var(--color-brand-accent);
+    box-shadow: 0 0 8px var(--color-brand-accent);
+    border-radius: 5px;
+    animation: fade-in-out 4s forwards;
+    z-index: 1001;
+}
+@keyframes fade-in-out {
+    0%   { opacity: 0; transform: translateY(-10px); }
+    10%  { opacity: 1; transform: translateY(0); }
+    90%  { opacity: 1; }
+    100% { opacity: 0; transform: translateY(-10px); }
+}
+
+/* -------------------------------
+   9. RESPONSIVENESS
+------------------------------- */
+@media (max-width: 768px) {
+    #task-lists {
+        flex-direction: column;
+        align-items: center;
+    }
+    .list {
+        width: 90%;
+    }
+    #task-controls {
+        flex-direction: column;
+    }
+    #taskInput {
+        width: 80%;
+    }
+    #analytics-panel {
+        top: 210px;
+    }
+    #toggle-analytics {
+        top: 260px;
+    }
+}
+
+/* ============ NEW: TIMER CONFIGURATION STYLING ========== */
+#timer-config {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    background-color: var(--color-dark-bg-alt);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--color-border);
+}
+
+#timer-config h3 {
+    margin-top: 0;
+    color: var(--color-brand-accent);
+    text-shadow: 0 0 3px var(--color-brand-accent);
+}
+
+#timer-config form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+#timer-config label {
+    flex: 1 1 100px;
+    text-align: right;
+    color: var(--color-text-base);
+}
+
+#timer-config input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-base);
+    box-shadow: 0 0 5px var(--color-brand-accent);
+}
+
+#timer-config select {
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-base);
+    box-shadow: 0 0 5px var(--color-brand-accent);
+}
+
+#saveTimerConfigBtn {
+    background-color: var(--color-brand-primary);
+    color: var(--color-text-base);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 0 5px var(--color-brand-primary);
+}
+#saveTimerConfigBtn:hover {
+    background-color: var(--color-brand-accent);
+}
+
+/* -------------------------------
+   10. GOAL PLANNER STYLING
+------------------------------- */
+#goal-planner {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1100px;
+    text-align: left;
+    background-color: var(--color-dark-bg-alt);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--color-border);
+}
+
+#goal-planner h2 {
+    margin-top: 0;
+    color: var(--color-brand-accent);
+    text-shadow: 0 0 4px var(--color-brand-accent);
+}
+
+#addGoalForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+#addGoalForm input[type="text"],
+#addGoalForm input[type="date"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    flex: 1 1 200px;
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-base);
+    box-shadow: 0 0 6px var(--color-brand-accent);
+}
+
+#addGoalForm button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-brand-primary);
+    color: var(--color-text-base);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#addGoalForm button:hover {
+    background-color: var(--color-brand-accent);
+}
+
+.goal {
+    background-color: var(--color-dark-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.goal h3 {
+    margin: 0 0 10px 0;
+    color: var(--color-brand-primary);
+}
+
+.goal .deadline {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 10px;
+}
+
+.goal .progress-bar {
+    width: 100%;
+    background-color: var(--color-border);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.goal .progress {
+    height: 10px;
+    background-color: var(--color-brand-accent);
+    width: 0%;
+    transition: width 0.5s ease-in-out;
+}
+
+.goal .milestones {
+    margin-top: 10px;
+}
+
+.milestone {
+    background-color: var(--color-dark-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 8px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.milestone.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.milestone button {
+    background-color: #BB2222;
+    border: none;
+    padding: 5px 8px;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.milestone button:hover {
+    background-color: #881111;
+}
+
+.addMilestoneForm {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.addMilestoneForm input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-base);
+    box-shadow: 0 0 4px var(--color-brand-accent);
+}
+
+.addMilestoneForm button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #116611;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.addMilestoneForm button:hover {
+    background-color: #22AA22;
+}
+
+.deleteGoalBtn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #BB2222;
+    border: none;
+    padding: 5px 8px;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.deleteGoalBtn:hover {
+    background-color: #881111;
+}
+
+/* -------------------------------
+   11. FOCUSED NOTES STYLING
+------------------------------- */
+#focused-notes {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1100px;
+    text-align: left;
+    background-color: var(--color-dark-bg-alt);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--color-border);
+}
+
+#focused-notes h2 {
+    margin-top: 0;
+    color: var(--color-brand-accent);
+    text-shadow: 0 0 4px var(--color-brand-accent);
+}
+
+#addNoteForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#addNoteForm textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-base);
+    box-shadow: 0 0 6px var(--color-brand-accent);
+    resize: vertical;
+}
+
+#addNoteForm select {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-base);
+    box-shadow: 0 0 6px var(--color-brand-accent);
+}
+
+#addNoteForm button {
+    align-self: flex-end;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #116611;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#addNoteForm button:hover {
+    background-color: #22AA22;
+}
+
+.note {
+    background-color: var(--color-dark-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.note h3 {
+    margin: 0 0 10px 0;
+    color: var(--color-brand-primary);
+}
+
+.note .tags {
+    margin-bottom: 10px;
+}
+
+.note .tag {
+    display: inline-block;
+    background-color: #555555;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.note .actions {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.note .actions button {
+    background-color: #BB2222;
+    border: none;
+    padding: 5px 8px;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 5px;
+}
+
+.note .actions button:hover {
+    background-color: #881111;
+}
+
+/* -------------------------------
+   12. TIME AUDIT TOOL STYLING
+------------------------------- */
+#time-audit-tool {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1100px;
+    text-align: left;
+    background-color: var(--color-dark-bg-alt);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--color-border);
+}
+
+#time-audit-tool h2 {
+    margin-top: 0;
+    color: var(--color-brand-accent);
+    text-shadow: 0 0 4px var(--color-brand-accent);
+}
+
+#addTimeLogForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+#addTimeLogForm select,
+#addTimeLogForm input[type="number"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-base);
+    box-shadow: 0 0 6px var(--color-brand-accent);
+}
+
+#addTimeLogForm button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-brand-primary);
+    color: var(--color-text-base);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#addTimeLogForm button:hover {
+    background-color: var(--color-brand-accent);
+}
+
+.time-log {
+    background-color: var(--color-dark-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.time-log h3 {
+    margin: 0 0 10px 0;
+    color: var(--color-brand-primary);
+}
+
+.time-log .details {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+/* -------------------------------
+   13. ACCOUNTABILITY BUDDY STYLING
+------------------------------- */
+#accountability-buddy {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1100px;
+    text-align: left;
+    background-color: var(--color-dark-bg-alt);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--color-border);
+}
+
+#accountability-buddy h2 {
+    margin-top: 0;
+    color: var(--color-brand-accent);
+    text-shadow: 0 0 4px var(--color-brand-accent);
+}
+
+#pairBuddyForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#pairBuddyForm input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-base);
+    box-shadow: 0 0 6px var(--color-brand-accent);
+}
+
+#pairBuddyForm button {
+    align-self: flex-start;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #116611;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#pairBuddyForm button:hover {
+    background-color: #22AA22;
+}
+
+.buddy {
+    background-color: var(--color-dark-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.buddy h3 {
+    margin: 0 0 10px 0;
+    color: var(--color-brand-primary);
+}
+
+.buddy .progress-bar {
+    width: 100%;
+    background-color: var(--color-border);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.buddy .progress {
+    height: 10px;
+    background-color: var(--color-brand-accent);
+    width: 0%;
+    transition: width 0.5s ease-in-out;
+}
+
+/* -------------------------------
+   14. VISUAL TIMER STYLING
+------------------------------- */
+#visual-timer {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    background-color: var(--color-dark-bg-alt);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--color-border);
+}
+
+#visual-timer h2 {
+    margin-top: 0;
+    color: var(--color-brand-accent);
+    text-shadow: 0 0 4px var(--color-brand-accent);
+}
+
+#visual-timer canvas {
+    width: 100%;
+    height: auto;
+}
+
+#visual-timer-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+#visualTimerModeSelect,
+#visualTimerDurationInput,
+#visualTimerStartBtn,
+#visualTimerResetBtn {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: none;
+}
+
+#visualTimerModeSelect,
+#visualTimerDurationInput {
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-base);
+    box-shadow: 0 0 6px var(--color-brand-accent);
+}
+
+#visualTimerStartBtn {
+    background-color: #116611;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 8px #116611;
+}
+#visualTimerStartBtn:hover {
+    background-color: #22AA22;
+}
+
+#visualTimerResetBtn {
+    background-color: #BB2222;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 8px #BB2222;
+}
+#visualTimerResetBtn:hover {
+    background-color: #881111;
+}
+
+/* -------------------------------
+   15. PRIORITY MATRIX STYLING
+------------------------------- */
+#priority-matrix {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1100px;
+    text-align: left;
+    background-color: var(--color-dark-bg-alt);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--color-border);
+}
+
+#priority-matrix h2 {
+    margin-top: 0;
+    color: var(--color-brand-accent);
+    text-shadow: 0 0 4px var(--color-brand-accent);
+}
+
+.matrix {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.quadrant {
+    background-color: var(--color-dark-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 10px;
+    min-height: 200px;
+    position: relative;
+}
+
+.quadrant h3 {
+    margin-top: 0;
+    color: var(--color-brand-primary);
+    text-align: center;
+}
+
+.quadrant .tasks {
+    min-height: 50px;
+}
+
+/* Each Priority Task */
+.priority-task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-dark-bg-alt);
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    border: 1px solid var(--color-border);
+    cursor: move;
+}
+
+.priority-task span {
+    margin-right: 5px;
+}
+
+.priority-task button {
+    background-color: #BB2222;
+    border: none;
+    padding: 5px 8px;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.priority-task button:hover {
+    background-color: #881111;
+}
+
+/* -------------------------------
+   16. GAMIFIED PRODUCTIVITY TRACKER STYLING
+------------------------------- */
+#gamified-tracker {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1100px;
+    text-align: left;
+    background-color: var(--color-dark-bg-alt);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--color-border);
+}
+
+#gamified-tracker h2 {
+    margin-top: 0;
+    color: var(--color-brand-accent);
+    text-shadow: 0 0 4px var(--color-brand-accent);
+}
+
+#gamified-tracker .points {
+    font-size: 1.5rem;
+    color: var(--color-brand-primary);
+    margin-bottom: 20px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: var(--color-badge);
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin: 5px;
+    font-size: 0.8rem;
+}
+
+#gamified-tracker .leaderboard {
+    margin-top: 20px;
+}
+
+.leaderboard-entry {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* -------------------------------
+   17. FOCUS PLAYLIST GENERATOR STYLING
+------------------------------- */
+#focus-playlist-generator {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 800px;
+    text-align: left;
+    background-color: var(--color-dark-bg-alt);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--color-border);
+}
+
+#focus-playlist-generator h2 {
+    margin-top: 0;
+    color: var(--color-brand-accent);
+    text-shadow: 0 0 4px var(--color-brand-accent);
+}
+
+#focusPlaylistForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#focusPlaylistForm select {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-base);
+    box-shadow: 0 0 6px var(--color-brand-accent);
+}
+
+#focusPlaylistForm button {
+    align-self: flex-start;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #116611;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#focusPlaylistForm button:hover {
+    background-color: #22AA22;
+}
+
+.playlist {
+    background-color: var(--color-dark-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.playlist h3 {
+    margin: 0 0 10px 0;
+    color: var(--color-brand-primary);
+}
+
+.playlist iframe {
+    width: 100%;
+    height: 80px;
+    border: none;
+    border-radius: 4px;
+}
+
+.playlist .actions {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.playlist .actions button {
+    background-color: #BB2222;
+    border: none;
+    padding: 5px 8px;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.playlist .actions button:hover {
+    background-color: #881111;
+}
+
+/* -------------------------------
+   18. RESPONSIVENESS FOR TOOLS
+------------------------------- */
+@media (max-width: 768px) {
+    #task-lists, .matrix {
+        flex-direction: column;
+        align-items: center;
+    }
+    .list, .quadrant {
+        width: 90%;
+    }
+    #task-controls, #addGoalForm, #addTimeLogForm, #pairBuddyForm, #focusPlaylistForm {
+        flex-direction: column;
+    }
+    #taskInput, #goalTitle, #goalDeadline, #timeLogTaskSelect, #timeLogDuration, #buddyNameInput, #visualTimerDurationInput, #visualTimerModeSelect, #priority-matrix .quadrant .tasks {
+        width: 100%;
+    }
+    #analytics-panel {
+        top: 210px;
+    }
+    #toggle-analytics {
+        top: 260px;
+    }
+}

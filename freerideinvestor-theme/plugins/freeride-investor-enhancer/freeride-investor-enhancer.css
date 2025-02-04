@@ -1,0 +1,317 @@
+/* freeride-investor-showcase.css */
+/*--------------------------------------------------------------
+  Base Styles
+--------------------------------------------------------------*/
+
+/* Color Palette & Global Variables */
+:root {
+  /* Core Brand & Backgrounds */
+  --color-black: #000000;
+  --color-dark-grey: #1E1E1E;
+  --color-dark-green: #003300;
+  --color-light-dark-green: #116611;
+  --color-nav-hover-bg: #228822; /* Hover Background for Navigation */
+  --color-dark-bg: #121212;
+  --color-dark-bg-alt: #1A1A1A;
+
+  /* Text & Accents */
+  --color-text-base: #EDEDED;
+  --color-text-muted: #BBBBBB;
+  --color-accent: var(--color-light-dark-green);
+  --color-border: #333333;
+
+  /* Spacing & Sizing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+
+  /* Typography */
+  --font-family-base: 'Roboto', sans-serif;
+  --font-size-base: 16px;
+  --line-height-base: 1.5;
+  --box-shadow-light: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  --box-shadow-hover: 0px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Global Resets & Base Styles */
+html {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family-base);
+  background: var(--color-dark-bg);
+  color: var(--color-text-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+header, footer, nav, section, article {
+  display: block;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+a:hover {
+  color: var(--color-text-base);
+  text-decoration: underline;
+}
+
+p {
+  margin-bottom: var(--spacing-sm);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+  font-weight: bold;
+  line-height: 1.2;
+  color: var(--color-text-base);
+}
+
+ul, ol {
+  margin-bottom: var(--spacing-md);
+  padding-left: var(--spacing-sm);
+}
+
+/*--------------------------------------------------------------
+  General Styles
+--------------------------------------------------------------*/
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+h1, h2, h3 {
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-sm);
+  font-weight: bold;
+}
+
+p, ul, ol {
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--color-nav-hover-bg);
+  color: var(--color-black);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: var(--color-light-dark-green);
+  color: var(--color-white);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: var(--color-dark-green);
+  color: var(--color-text-base);
+  transform: translateY(-2px);
+}
+
+/*--------------------------------------------------------------
+  Section Styles
+--------------------------------------------------------------*/
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url('<?php echo esc_url(plugins_url('images/hero-image.jpg', __FILE__)); ?>') center/cover no-repeat;
+  color: var(--color-white);
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero-section h1 {
+  font-size: 2.8rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Introduction Section */
+.introduction-section {
+  background-color: var(--color-light-dark-green);
+  color: var(--color-black);
+  padding: 40px 20px;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* Our Courses Section */
+.our-courses-section {
+  padding: 60px 20px;
+  background-color: var(--color-dark-bg-alt);
+}
+
+.our-courses-section h2 {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-text-base);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.grid-item {
+  background-color: var(--color-dark-grey);
+  padding: var(--spacing-sm);
+  border-radius: 8px;
+  box-shadow: var(--box-shadow-light);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item:hover,
+.grid-item:focus-within {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.course-image {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.grid-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-text-base);
+}
+
+.grid-item p strong {
+  color: var(--color-accent);
+}
+
+.grid-item ul {
+  list-style: disc inside;
+  margin-left: 0;
+  padding-left: 1.5rem;
+}
+
+.grid-item a.btn-secondary {
+  margin-top: auto;
+}
+
+/* Coming Soon Style */
+.grid-item.coming-soon {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--color-dark-grey),
+    var(--color-dark-grey) 10px,
+    var(--color-dark-bg-alt) 10px,
+    var(--color-dark-bg-alt) 20px
+  );
+  text-align: center;
+  color: var(--color-text-muted);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--spacing-md);
+}
+
+.grid-item.coming-soon h3 {
+  color: var(--color-text-base);
+  margin-bottom: var(--spacing-sm);
+}
+
+.grid-item.coming-soon p {
+  color: var(--color-text-muted);
+}
+
+/* Container Styling */
+.fie-premium-dashboard {
+  padding: 20px;
+  background-color: var(--color-dark-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.fie-section {
+  margin-bottom: 30px;
+}
+
+.fie-section h3 {
+  margin-bottom: 15px;
+  color: var(--color-text-base);
+}
+
+.fie-progress-bar {
+  background-color: var(--color-dark-grey);
+  border-radius: 25px;
+  overflow: hidden;
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+.fie-progress {
+  height: 100%;
+  background-color: var(--color-light-dark-green);
+  width: 0%;
+  transition: width 0.5s ease-in-out;
+}
+
+.fie-quote {
+  font-style: italic;
+  color: var(--color-text-muted);
+  background-color: var(--color-dark-grey);
+  padding: 10px;
+  border-left: 4px solid var(--color-accent);
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: green;
+}

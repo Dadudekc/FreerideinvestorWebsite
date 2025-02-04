@@ -1,0 +1,66 @@
+/* File: assets/css/dashboard.css */
+
+.stock-research-dashboard {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.stock-research-dashboard h1,
+.stock-research-dashboard h2,
+.stock-research-dashboard h3,
+.stock-research-dashboard h4 {
+    color: #333;
+}
+
+.stock-research-dashboard form {
+    margin-bottom: 20px;
+}
+
+.stock-research-dashboard label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.stock-research-dashboard input,
+.stock-research-dashboard select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.stock-research-dashboard button {
+    padding: 10px 20px;
+    background-color: #0073aa;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.stock-research-dashboard button:hover {
+    background-color: #005177;
+}
+
+.stock-data {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.stock-error {
+    border: 1px solid #e74c3c;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: #fceae9;
+    color: #e74c3c;
+}
+
+.stock-data ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}

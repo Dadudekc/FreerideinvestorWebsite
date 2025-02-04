@@ -1,0 +1,660 @@
+/* _trading-journal-insights.css */
+
+/* Container Styling */
+.content {
+  background-color: var(--color-light-bg);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: var(--color-accent);
+  border-bottom: 3px solid var(--color-accent);
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--color-dark-green);
+  margin-top: 3rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: var(--color-text-muted);
+  margin-top: 2rem;
+}
+
+/* Paragraphs & Lists */
+p {
+  font-size: 1.1rem;
+  color: var(--color-text-base);
+  margin-bottom: 1.5rem;
+}
+
+ul, ol {
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.75rem;
+}
+
+strong {
+  color: var(--color-text-base);
+}
+
+/* Dividers */
+.divider {
+  border-top: 2px solid var(--color-accent);
+  margin: 3rem 0;
+}
+
+/* Blockquotes */
+blockquote {
+  background-color: var(--color-highlight-bg);
+  border-left: 5px solid var(--color-accent);
+  padding: 1.5rem 2rem;
+  font-style: italic;
+  color: var(--color-text-muted);
+  border-radius: 4px;
+  margin: 2rem 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .content {
+    padding: 1.5rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+  
+  p, li {
+    font-size: 1rem;
+  }
+}
+
+
+/* -------------------------- */
+/*         Root Setup         */
+/* -------------------------- */
+:root {
+  --color-dark-bg: #121212;
+  --color-dark-bg-alt: #1A1A1A;
+  --color-text-base: #EDEDED;
+  --color-text-muted: #BBBBBB;
+  --color-light-dark-green: #116611;
+  --color-border: #333333;
+
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
+
+/* -------------------------- */
+/*       Global Styling       */
+/* -------------------------- */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  color: var(--color-text-base);
+  background: var(--color-dark-bg);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Utility classes */
+.container,
+.blog-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* -------------------------- */
+/*          Navbar            */
+/* -------------------------- */
+.blog-header {
+  background: var(--color-dark-bg-alt);
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.blog-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.blog-header .logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--color-light-dark-green);
+}
+
+.blog-header .nav-links {
+  display: flex;
+  gap: 15px; /* Slightly tightened gap between links */
+}
+
+.blog-header .nav-links a {
+  text-decoration: none;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  transition: color var(--transition-normal), border-bottom var(--transition-normal);
+}
+
+.blog-header .nav-links a:hover,
+.blog-header .nav-links a.active {
+  color: var(--color-light-dark-green);
+  border-bottom: 2px solid var(--color-light-dark-green); /* Underline on hover/active */
+}
+
+/* -------------------------- */
+/*        Hero Section        */
+/* -------------------------- */
+.hero {
+  background: var(--color-dark-bg-alt);
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--color-text-base);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px; /* More spacing below */
+  color: var(--color-light-dark-green);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin: 0 auto 20px auto; /* Add some spacing below the paragraph */
+  max-width: 800px;
+}
+
+.hero hr {
+  border: 1px solid var(--color-light-dark-green);
+  margin: 40px auto; /* Increased space above and below divider */
+  width: 60%;
+}
+
+/* -------------------------- */
+/*       Blog Content         */
+/* -------------------------- */
+.blog-content .blog-section {
+  margin-bottom: 60px; /* Consistent spacing between sections */
+}
+
+.blog-content h2 {
+  color: var(--color-light-dark-green);
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 40px 0 20px 0; /* More space above and below section headings */
+}
+
+.blog-content p {
+  font-size: 1.1rem;
+  color: var(--color-text-base);
+  line-height: 1.8;
+}
+
+/* -------------------------- */
+/*     Code Block Styling     */
+/* -------------------------- */
+pre, code {
+  background: #1e1e1e; /* Dark gray background */
+  color: #d4d4d4; /* Light gray text */
+  font-family: 'Courier New', Courier, monospace; /* Monospace font */
+  font-size: 0.9rem;
+  line-height: 1.4; /* More compact for dense code */
+  padding: 20px; /* Slightly increased padding for better readability */
+  border-radius: 5px;
+  overflow-x: auto; /* Scrollable if content overflows */
+  border: 1px solid var(--color-border);
+  margin-bottom: 20px;
+}
+
+code {
+  padding: 3px 6px;
+  background: var(--color-dark-bg-alt);
+  border-radius: 3px;
+}
+
+pre {
+  margin-bottom: 30px;
+}
+
+/* -------------------------- */
+/*         Footer             */
+/* -------------------------- */
+.blog-footer {
+  background: var(--color-dark-bg-alt);
+  padding: 40px 20px; /* More padding for a spacious layout */
+  text-align: center;
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--color-border); /* Subtle top border for separation */
+}
+
+.blog-footer p {
+  margin-bottom: 15px; /* Space between footer text and social links */
+}
+
+.blog-footer .blog-social-links {
+  margin-top: 10px;
+}
+
+.blog-footer .blog-social-links a {
+  color: var(--color-text-muted);
+  margin: 0 10px;
+  font-size: 1.2rem;
+  transition: color var(--transition-fast);
+}
+
+.blog-footer .blog-social-links a:hover {
+  color: var(--color-light-dark-green);
+}
+
+/* -------------------------- */
+/*       Hero Subtitle        */
+/* -------------------------- */
+.hero p {
+  font-size: 1.2rem;
+  font-weight: 400; /* Slightly lighter weight for balance */
+  margin: 0 auto 30px auto; /* Add more spacing below */
+  max-width: 800px;
+  text-align: center; /* Ensure it's center-aligned */
+}
+
+/* -------------------------- */
+/*    Table of Contents       */
+/* -------------------------- */
+.table-of-contents {
+  margin: 40px 0; /* Add more space above and below */
+  text-align: center; /* Center-align the table of contents */
+}
+
+.table-of-contents p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-light-dark-green);
+  margin-bottom: 20px; /* Spacing below the title */
+}
+
+/* Style each navigation button */
+.table-of-contents a {
+  display: inline-block;
+  font-size: 1.1rem;
+  color: var(--color-text-base);
+  background: var(--color-dark-bg-alt);
+  padding: 12px 20px;
+  margin: 10px; /* Spacing between buttons */
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  transition: background var(--transition-normal), color var(--transition-fast);
+  text-transform: capitalize;
+}
+
+.table-of-contents a:hover {
+  background: var(--color-light-dark-green);
+  color: var(--color-dark-bg);
+}
+
+.table-of-contents a.active {
+  background: var(--color-light-dark-green);
+  color: var(--color-dark-bg);
+  font-weight: bold;
+}
+
+/* Make buttons responsive */
+@media (max-width: 768px) {
+  .table-of-contents a {
+    display: block; /* Stack buttons vertically on smaller screens */
+    width: 100%; /* Full-width buttons */
+    margin: 10px 0;
+  }
+}
+
+
+/* -------------------------- */
+/*       Root Setup           */
+/* -------------------------- */
+:root {
+  --color-dark-bg: #121212;
+  --color-dark-bg-alt: #1A1A1A;
+  --color-text-base: #EDEDED;
+  --color-text-muted: #BBBBBB;
+  --color-light-dark-green: #116611;
+  --color-border: #333333;
+
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --hero-bg-gradient: linear-gradient(135deg, #116611, #0e550e);
+}
+
+/* -------------------------- */
+/*       Global Styling       */
+/* -------------------------- */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  color: var(--color-text-base);
+  background: var(--color-dark-bg);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Utility classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.theme-container {
+  /* Optional: Add specific styles if needed */
+}
+
+/* -------------------------- */
+/*        Hero Section        */
+/* -------------------------- */
+
+.hero {
+  background: var(--hero-bg-gradient);
+  color: var(--color-text-base);
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  color: #000; /* Change to black */
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  margin: 0 auto;
+  max-width: 800px;
+  color: var(--color-text-muted);
+}
+
+
+/* -------------------------- */
+/*  Overarching Goal Section  */
+/* -------------------------- */
+.overarching-goal {
+  background: var(--color-dark-bg-alt);
+  padding: 40px 20px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.section-heading {
+  font-size: 2rem;
+  color: var(--color-light-dark-green);
+  margin-bottom: 20px;
+}
+
+.goal-description {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* -------------------------- */
+/*      Updates Section       */
+/* -------------------------- */
+.updates {
+  padding: 40px 20px;
+}
+
+.updates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.update-item {
+  background: var(--color-dark-bg-alt);
+  padding: 20px;
+  border-radius: 5px;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  border: 1px solid var(--color-border);
+}
+
+.update-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.update-item h3 {
+  color: var(--color-light-dark-green);
+  margin-bottom: 10px;
+}
+
+.update-item p {
+  margin-bottom: 15px;
+  color: var(--color-text-base);
+}
+
+.update-list li {
+  margin-bottom: 5px;
+  color: var(--color-text-muted);
+  padding-left: 1.2em;
+  position: relative;
+}
+
+.update-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--color-light-dark-green);
+}
+
+/* -------------------------- */
+/*   Development Blog Posts   */
+/* -------------------------- */
+.dev-blog-posts {
+  padding: 40px 20px;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.blog-post {
+  background: var(--color-dark-bg-alt);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.blog-post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.blog-thumbnail img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.blog-post h3 {
+  padding: 15px;
+  font-size: 1.4rem;
+  color: var(--color-light-dark-green);
+  margin: 0;
+}
+
+.blog-post h3 a {
+  color: var(--color-light-dark-green);
+  transition: color var(--transition-fast);
+}
+
+.blog-post h3 a:hover {
+  color: #aaffaa; /* Lighter shade on hover */
+}
+
+.blog-post p {
+  padding: 0 15px;
+  margin-bottom: 15px;
+  color: var(--color-text-base);
+  flex-grow: 1;
+}
+
+.read-more {
+  display: inline-block;
+  padding: 10px 15px;
+  margin: 15px;
+  font-size: 1rem;
+  color: var(--color-light-dark-green);
+  border: 1px solid var(--color-light-dark-green);
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background var(--transition-fast), color var(--transition-fast);
+  text-align: center;
+}
+
+.read-more:hover {
+  background: var(--color-light-dark-green);
+  color: var(--color-dark-bg);
+}
+
+.no-posts-message {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+/* -------------------------- */
+/*        Footer Styling      */
+/* -------------------------- */
+.footer {
+  background: var(--color-dark-bg-alt);
+  color: var(--color-text-muted);
+  text-align: center;
+  padding: 20px;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* -------------------------- */
+/*     Responsive Adjustments */
+/* -------------------------- */
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 15px;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .section-heading {
+    font-size: 1.8rem;
+  }
+
+  .goal-description,
+  .update-item p,
+  .blog-post p {
+    font-size: 1rem;
+  }
+
+  .read-more {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    margin: 12px;
+  }
+}
+
+/* Smaller Devices */
+@media (max-width: 480px) {
+  .hero {
+    padding: 40px 10px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+  }
+
+  .section-heading {
+    font-size: 1.6rem;
+  }
+
+  .goal-description,
+  .update-item p,
+  .blog-post p {
+    font-size: 0.9rem;
+  }
+
+  .read-more {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+    margin: 10px;
+  }
+}

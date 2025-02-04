@@ -1,0 +1,101 @@
+/* =====================================
+ * FreerideInvestor Productivity Board CSS
+ * ===================================== */
+
+/* Root Variables */
+:root {
+    --color-dark-bg:       #121212;
+    --color-dark-bg-alt:   #1A1A1A;
+    --color-text-base:     #EDEDED;
+    --color-text-muted:    #BBBBBB;
+    --color-border:        #333333;
+    --color-brand-primary: #116611; /* Primary green */
+    --color-brand-accent:  #22AA22; /* Accent green */
+}
+
+/* Body Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-base);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-image: radial-gradient(circle at top center, var(--color-dark-bg-alt), var(--color-dark-bg));
+}
+
+/* Header */
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: var(--color-brand-primary);
+    text-shadow: 0 0 6px var(--color-brand-primary);
+}
+
+/* Footer */
+footer {
+    /* As defined earlier */
+}
+
+/* Pomodoro Orb */
+#freeride-orb {
+    /* As defined earlier */
+}
+
+/* Timer */
+#timer {
+    /* As defined earlier */
+}
+
+/* Buttons */
+.button {
+    /* As defined earlier, using brand colors */
+}
+
+/* Task Lists */
+#task-list {
+    /* As defined earlier */
+}
+.list h3 {
+    color: var(--color-brand-primary);
+}
+
+/* Tasks */
+.task .label.high-priority {
+    background-color: #BB2222;
+}
+.task .label.medium-priority {
+    background-color: #BB9900;
+}
+.task .label.low-priority {
+    background-color: #229922;
+}
+
+/* Analytics Panel */
+#analytics-panel {
+    /* As defined earlier */
+}
+
+/* Tips */
+.freeride-tip {
+    /* As defined earlier */
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    #task-lists {
+        flex-direction: column;
+        align-items: center;
+    }
+    .list {
+        width: 90%;
+    }
+    #task-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    #taskInput {
+        width: 80%;
+    }
+}

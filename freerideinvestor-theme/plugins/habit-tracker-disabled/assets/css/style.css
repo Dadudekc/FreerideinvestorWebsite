@@ -1,0 +1,38 @@
+.ht-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#ht-add-habit-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.ht-habits-list {
+    list-style: none;
+    padding: 0;
+}
+
+.ht-habits-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.ht-habits-list li:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.ht-complete-habit {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.ht-complete-habit:hover {
+    background-color: #218838;
+}

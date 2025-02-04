@@ -1,0 +1,132 @@
+/* Signup Section */
+.signup-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #121212; /* Dark background */
+  padding: 20px;
+  color: #EDEDED;
+}
+
+.signup-grid {
+  display: grid;
+  place-items: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+.signup-card {
+  background-color: #1A1A1A; /* Slightly lighter for contrast */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.signup-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #22AA22; /* Green highlight */
+}
+
+.signup-description {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #BBBBBB;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  color: #EDEDED;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #121212;
+  border: 1px solid #333333;
+  border-radius: 5px;
+  color: #EDEDED;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #22AA22;
+  outline: none;
+}
+
+.signup-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #116611;
+  color: #000; /* Black text */
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.signup-btn:hover {
+  background-color: #22AA22;
+  transform: translateY(-2px);
+}
+
+.signup-login-link {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #BBBBBB;
+}
+
+.signup-login-link a {
+  color: #22AA22;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.signup-login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .signup-card {
+    padding: 30px;
+  }
+
+  .signup-title {
+    font-size: 1.8rem;
+  }
+
+  .signup-description {
+    font-size: 1rem;
+  }
+
+  .form-group input {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .signup-btn {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
